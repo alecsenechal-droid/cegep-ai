@@ -1,4 +1,4 @@
-# Cartable
+# Cégep AI
 
 **Ton Omnivox, mais utilisable.**
 
@@ -7,7 +7,7 @@ Excel — avec les devoirs et les remises cachés dedans. Les annonces arrivent 
 MIO. Ton horaire est ailleurs. **Rien de tout ça ne se parle**, pis c'est déjà tout
 dans le même portail.
 
-Cartable lit tout ça une fois, remplit ton agenda, pis après tu lui poses tes
+Cégep AI lit tout ça une fois, remplit ton agenda, pis après tu lui poses tes
 questions comme à un chum qui aurait lu tous tes documents.
 
 ```
@@ -42,7 +42,7 @@ MIO, ton horaire.
 
 > **Toi :** « Peux-tu m'aider avec mon devoir de math que je dois remettre demain ? »
 >
-> **Cartable :** « Ton plan de cours de maths dit que l'IA n'est pas permise pour
+> **Cégep AI :** « Ton plan de cours de maths dit que l'IA n'est pas permise pour
 > les travaux notés. Je peux t'expliquer la matière si tu veux comprendre, mais je
 > ne ferai pas le devoir. »
 
@@ -83,7 +83,7 @@ comme d'habitude, il lit ce qui est à l'écran. Rien de plus.
 
 Parce que ton téléphone sonne tout seul. C'est tout.
 
-Tu n'as pas à ouvrir Cartable pour savoir où t'en es — **ton examen apparaît dans
+Tu n'as pas à ouvrir Cégep AI pour savoir où t'en es — **ton examen apparaît dans
 l'agenda que t'as déjà**, avec un rappel, comme tes autres affaires.
 
 ### Ce qui va s'écrire dedans
@@ -114,7 +114,7 @@ cacher ou l'effacer d'un coup sans toucher au reste.
 | **Rien pour l'instant** | il te montre les dates à l'écran, tu décides plus tard |
 
 ⚠️ **Ça écrit dans ton agenda, ça ne le relit pas.** Si tu changes une affaire
-directement dans Google Agenda, Cartable ne le saura pas. Une information à deux
+directement dans Google Agenda, Cégep AI ne le saura pas. Une information à deux
 places, ça finit toujours par se contredire — pis c'est toujours toi qui manges la
 volée.
 
@@ -142,7 +142,7 @@ même plateforme, ça devrait marcher — mais c'est pas vérifié.
 Ouvre l'**application Claude Code** (n'importe où), et colle ça :
 
 ```
-Installe Cartable pour moi : https://github.com/alecsenechal-droid/cartable
+Installe Cégep AI pour moi : https://github.com/alecsenechal-droid/cegep-ai
 Suis les instructions dans INSTALL-AGENT.md du dépôt.
 ```
 
@@ -154,7 +154,7 @@ tu veux ton dossier.
 
 1. Sur la page du dépôt, clique le bouton vert **Code** → **Download ZIP**
 2. Décompresse le fichier
-3. Prends le dossier **`dossier-type`**, renomme-le **`Cartable`**, et glisse-le
+3. Prends le dossier **`dossier-type`**, renomme-le **`CegepAI`**, et glisse-le
    dans tes **Documents**
 4. Ouvre l'**application Claude Code** et ouvre ce dossier-là
 5. Tape `/demarrage`
@@ -168,7 +168,7 @@ C'est tout. Pas de ligne de commande, pas de commande à copier-coller.
 
 ### ⚠️ Vérifie avant de commencer
 
-Dans ton dossier `Cartable`, tu dois voir **quatre choses** :
+Dans ton dossier `CegepAI`, tu dois voir **quatre choses** :
 
 ```
 CLAUDE.md    _ETAT.md    _inbox    .claude
@@ -190,19 +190,19 @@ chercher pourquoi pendant une heure.
 **Windows** (PowerShell) :
 
 ```powershell
-git clone https://github.com/alecsenechal-droid/cartable.git
-New-Item -ItemType Directory -Force "$env:USERPROFILE\Documents\Cartable" | Out-Null
-Copy-Item -Path "cartable\dossier-type\*" -Destination "$env:USERPROFILE\Documents\Cartable" -Recurse -Force
-cd "$env:USERPROFILE\Documents\Cartable"
+git clone https://github.com/alecsenechal-droid/cegep-ai.git
+New-Item -ItemType Directory -Force "$env:USERPROFILE\Documents\CegepAI" | Out-Null
+Copy-Item -Path "cegep-ai\dossier-type\*" -Destination "$env:USERPROFILE\Documents\CegepAI" -Recurse -Force
+cd "$env:USERPROFILE\Documents\CegepAI"
 ```
 
 **macOS / Linux** :
 
 ```bash
-git clone https://github.com/alecsenechal-droid/cartable.git
-mkdir -p ~/Documents/Cartable
-cp -R cartable/dossier-type/. ~/Documents/Cartable/
-cd ~/Documents/Cartable
+git clone https://github.com/alecsenechal-droid/cegep-ai.git
+mkdir -p ~/Documents/CegepAI
+cp -R cegep-ai/dossier-type/. ~/Documents/CegepAI/
+cd ~/Documents/CegepAI
 ```
 
 Puis `claude`, et `/demarrage`.
@@ -296,7 +296,7 @@ Tout est dans [`dossier-type/CLAUDE.md`](dossier-type/CLAUDE.md).
 ## Ce que ça fait pas
 
 - **On te demandera jamais ton mot de passe Omnivox.** Tu te connectes toi-même,
-  Cartable lit la session déjà ouverte. Si un outil te demande ce mot de passe-là,
+  Cégep AI lit la session déjà ouverte. Si un outil te demande ce mot de passe-là,
   peu importe lequel, méfie-toi.
 - **Rien se fait sans que tu le demandes.** Ton agent va où tu lui dis d'aller.
 - **Rien tourne en arrière-plan.** Pas de surveillance, pas de tâche planifiée.

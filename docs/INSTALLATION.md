@@ -8,7 +8,7 @@ Téléchargements**, rien d'autre. C'est une règle de sécurité du navigateur,
 un obstacle à contourner par du code.
 
 La solution : créer un **lien** — une jonction sur Windows, un lien symbolique sur
-macOS et Linux — entre `Téléchargements/Cartable` et le dossier `_inbox` de ton
+macOS et Linux — entre `Téléchargements/CegepAI` et le dossier `_inbox` de ton
 dossier scolaire.
 
 Les deux chemins deviennent **le même dossier physique**. Chrome croit écrire dans
@@ -19,7 +19,7 @@ arrière-plan, aucun script à maintenir.
 
 ## Créer le lien
 
-Suppose que ton dossier scolaire est `Documents/Cartable`. Adapte si tu l'as mis
+Suppose que ton dossier scolaire est `Documents/CegepAI`. Adapte si tu l'as mis
 ailleurs.
 
 ### Windows
@@ -27,23 +27,23 @@ ailleurs.
 Dans PowerShell, sans droits administrateur :
 
 ```powershell
-New-Item -ItemType Junction -Path "$env:USERPROFILE\Downloads\Cartable" -Target "$env:USERPROFILE\Documents\Cartable\_inbox"
+New-Item -ItemType Junction -Path "$env:USERPROFILE\Downloads\CegepAI" -Target "$env:USERPROFILE\Documents\CegepAI\_inbox"
 ```
 
 Ou avec l'invite de commandes :
 
 ```
-mklink /J "%USERPROFILE%\Downloads\Cartable" "%USERPROFILE%\Documents\Cartable\_inbox"
+mklink /J "%USERPROFILE%\Downloads\CegepAI" "%USERPROFILE%\Documents\CegepAI\_inbox"
 ```
 
-⚠️ `Downloads\Cartable` **ne doit pas exister** avant. Si le dossier est déjà là,
+⚠️ `Downloads\CegepAI` **ne doit pas exister** avant. Si le dossier est déjà là,
 supprime-le ou choisis un autre nom (change aussi `DOSSIER` dans
 `extension/config.js`).
 
 ### macOS et Linux
 
 ```bash
-ln -s ~/Documents/Cartable/_inbox ~/Downloads/Cartable
+ln -s ~/Documents/CegepAI/_inbox ~/Downloads/CegepAI
 ```
 
 ---
@@ -53,8 +53,8 @@ ln -s ~/Documents/Cartable/_inbox ~/Downloads/Cartable
 Écris un fichier d'un bord, regarde s'il apparaît de l'autre :
 
 ```bash
-echo test > ~/Downloads/Cartable/verification.txt
-ls ~/Documents/Cartable/_inbox/
+echo test > ~/Downloads/CegepAI/verification.txt
+ls ~/Documents/CegepAI/_inbox/
 ```
 
 Si `verification.txt` apparaît, le lien fonctionne. Supprime-le ensuite.
@@ -78,14 +78,14 @@ apparaître dans ton `_inbox/`.
 
 **Un outil de nettoyage automatique** (Assistant Stockage de Windows, CCleaner)
 qui vide les vieux téléchargements peut entrer dans le lien et effacer le contenu
-de ton `_inbox`. Exclus `Téléchargements/Cartable` de ces outils, ou désactive le
+de ton `_inbox`. Exclus `Téléchargements/CegepAI` de ces outils, ou désactive le
 nettoyage automatique des téléchargements.
 
 **Supprimer le lien** n'efface pas tes fichiers — seulement le raccourci :
 
 ```powershell
-Remove-Item "$env:USERPROFILE\Downloads\Cartable"   # Windows
+Remove-Item "$env:USERPROFILE\Downloads\CegepAI"   # Windows
 ```
 ```bash
-rm ~/Downloads/Cartable                              # macOS / Linux
+rm ~/Downloads/CegepAI                              # macOS / Linux
 ```

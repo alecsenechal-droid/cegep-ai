@@ -28,4 +28,4 @@ export const DESTINATIONS = [
 // Ce dossier doit être un LIEN vers ton vrai dossier scolaire. Chrome refuse
 // d'écrire ailleurs que dans Téléchargements — le lien contourne ça sans
 // bidouille et sans programme en arrière-plan. Voir docs/INSTALLATION.md.
-export const DOSSIER = 'Cartable';
+export const DOSSIER = 'CegepAI';

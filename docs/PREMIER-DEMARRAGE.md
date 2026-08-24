@@ -14,20 +14,20 @@ Tu arrives sur la page du dépôt.
 Bouton vert **`< > Code`** en haut à droite de la liste des fichiers →
 **Download ZIP**.
 
-Un fichier `cartable-main.zip` tombe dans tes Téléchargements.
+Un fichier `cegep-ai-main.zip` tombe dans tes Téléchargements.
 
 ---
 
 ## 2. Sur ton ordinateur — 1 minute
 
 1. **Décompresse** le ZIP (clic droit → Extraire tout)
-2. Ouvre `cartable-main`. Tu vois `extension`, `dossier-type`, `docs`,
+2. Ouvre `cegep-ai-main`. Tu vois `extension`, `dossier-type`, `docs`,
    `README.md`…
 3. Prends **seulement le dossier `dossier-type`**
-4. **Renomme-le `Cartable`**
+4. **Renomme-le `CegepAI`**
 5. **Glisse-le dans tes Documents**
 
-Ouvre `Documents\Cartable`. Tu dois voir **quatre choses** :
+Ouvre `Documents\CegepAI`. Tu dois voir **quatre choses** :
 
 ```
 CLAUDE.md      _ETAT.md      _inbox      .claude
@@ -43,12 +43,12 @@ CLAUDE.md      _ETAT.md      _inbox      .claude
 
 ## 3. Dans l'application Claude Code
 
-Ouvre l'application → **Ouvrir un dossier** → `Documents\Cartable`.
+Ouvre l'application → **Ouvrir un dossier** → `Documents\CegepAI`.
 
 Il lit `CLAUDE.md` tout seul, voit que `_ETAT.md` est encore le gabarit, et
 t'accueille :
 
-> Salut ! Ton dossier Cartable est tout neuf — `_ETAT.md` est encore le gabarit.
+> Salut ! Ton dossier Cégep AI est tout neuf — `_ETAT.md` est encore le gabarit.
 > Tape **`/demarrage`** et je vais lire ton Omnivox pour le remplir.
 
 **Toi :**
@@ -61,7 +61,7 @@ t'accueille :
 
 ## 4. La préparation
 
-> **Bienvenue dans Cartable.**
+> **Bienvenue dans Cégep AI.**
 >
 > Je vais lire ton Omnivox une seule fois, comprendre ta session, et remplir ton
 > agenda. Ensuite tu me poses tes questions normalement.

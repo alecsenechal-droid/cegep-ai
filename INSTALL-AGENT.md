@@ -1,6 +1,6 @@
 # Installation — instructions pour l'agent
 
-Tu lis ceci parce qu'un étudiant t'a demandé d'installer Cartable. Fais les étapes
+Tu lis ceci parce qu'un étudiant t'a demandé d'installer Cégep AI. Fais les étapes
 dans l'ordre. **Il ne devrait avoir rien à taper d'autre.**
 
 ---
@@ -8,7 +8,7 @@ dans l'ordre. **Il ne devrait avoir rien à taper d'autre.**
 ## 1. Récupérer le dépôt
 
 ```bash
-git clone https://github.com/alecsenechal-droid/cartable.git
+git clone https://github.com/alecsenechal-droid/cegep-ai.git
 ```
 
 Si `git` n'est pas installé, télécharge le ZIP et décompresse-le. **Ne demande pas
@@ -20,7 +20,7 @@ Mets ça dans un dossier temporaire, pas dans ses Documents.
 
 ## 2. Créer son dossier scolaire
 
-Demande-lui **où il le veut**, en proposant `Documents/Cartable` par défaut. Une
+Demande-lui **où il le veut**, en proposant `Documents/CegepAI` par défaut. Une
 seule question, réponse par défaut acceptable.
 
 Puis copie le **contenu** de `dossier-type/` dedans — **pas le dossier lui-même**.
@@ -28,13 +28,13 @@ Puis copie le **contenu** de `dossier-type/` dedans — **pas le dossier lui-mê
 **Windows**
 ```powershell
 New-Item -ItemType Directory -Force "<destination>" | Out-Null
-Copy-Item -Path "<temp>\cartable\dossier-type\*" -Destination "<destination>" -Recurse -Force
+Copy-Item -Path "<temp>\cegep-ai\dossier-type\*" -Destination "<destination>" -Recurse -Force
 ```
 
 **macOS / Linux**
 ```bash
 mkdir -p "<destination>"
-cp -R "<temp>/cartable/dossier-type/." "<destination>/"
+cp -R "<temp>/cegep-ai/dossier-type/." "<destination>/"
 ```
 
 ⚠️ Le `\*` et le `/.` sont importants : ils copient le contenu **y compris

@@ -6,7 +6,7 @@
 > **Session** : `<Automne 2026>`
 
 Tout ce qui vient d'Omnivox — Léa, MIO, communiqués — plus mes travaux et ce qui
-touche ma vie scolaire. Rempli par l'extension **Cartable** et par moi. Rien n'est
+touche ma vie scolaire. Rempli par l'extension **Cégep AI** et par moi. Rien n'est
 récupéré automatiquement.
 
 ---

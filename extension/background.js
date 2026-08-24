@@ -28,7 +28,7 @@ function creerLeMenu() {
   chrome.contextMenus.removeAll(function () {
     chrome.contextMenus.create({
       id: RACINE,
-      title: 'Envoyer au Cartable',
+      title: 'Envoyer à Cégep AI',
       contexts: CONTEXTES
     });
     for (const d of DESTINATIONS) {

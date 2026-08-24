@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Cartable",
+  "name": "Cégep AI",
   "version": "0.3.0",
   "description": "Capture un texte, une image ou un lien vers ton dossier scolaire, avec sa source et sa date.",
   "permissions": ["contextMenus", "downloads", "tabs", "activeTab", "scripting"],
