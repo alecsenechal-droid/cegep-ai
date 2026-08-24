@@ -66,15 +66,20 @@ noter s'il apparaît dans Omnivox.)*
 
 ---
 
-## Étape 2 — Trois questions, puis tu te tais
+## Étape 2 — Une seule question
 
-Pose-les ensemble :
+> **Tu es à quel cégep ?**
 
-1. **Ton cégep ?**
-2. **Ton programme ?**
-3. **Ta session ?**
+C'est la seule chose que tu ne peux pas lire : l'adresse d'Omnivox change d'un
+établissement à l'autre, et il faut la connaître pour ouvrir la bonne page.
 
-C'est tout. Le reste se lit.
+**Le programme et la session, tu les lis toi-même** pendant le balayage — la
+session est affichée dans le menu de Léa (« Aut. 2026 »), le programme est dans
+« Mon dossier ». Les demander, ce serait faire retaper à l'étudiant ce qui est
+déjà à l'écran, et c'est exactement ce qu'on lui promet d'éviter.
+
+Si l'étudiant les donne spontanément, prends-les — mais confirme-les quand même
+contre Omnivox, et dis-le si ça ne concorde pas.
 
 Lis ensuite `_ETAT.md`. S'il contient encore des `<...>`, c'est un premier
 démarrage. S'il est déjà rempli, **ne l'écrase pas** : demande si l'étudiant veut

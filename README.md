@@ -190,8 +190,11 @@ puis `/demarrage`
 
 ## Ce que `/demarrage` fait
 
-Il te pose **trois questions** — ton cégep, ton programme, ta session — pis il te
-demande d'**ouvrir Omnivox et de te connecter toi-même**.
+Il te pose **une seule question** — à quel cégep tu es — pis il te demande
+d'**ouvrir Omnivox et de te connecter toi-même**.
+
+Ton programme, ta session, ton horaire, tes profs : il les lit lui-même. Te les
+faire retaper serait exactement le travail qu'on te promet d'éviter.
 
 Ensuite il fait le grand tour, une seule fois :
 

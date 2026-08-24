@@ -107,10 +107,10 @@ Ne pas les rouvrir sans raison neuve. Chacune a coûté une discussion.
    avant de distribuer.**
 2. **Tester l'installation comme un inconnu** : copier `dossier-type/`, lancer
    `claude`, faire `/demarrage`, et noter où ça bloque.
-3. **Vérifier que `/demarrage` se déclenche vraiment.** Les skills sont dans
-   `dossier-type/.claude/skills/<nom>/SKILL.md`. La forme est la bonne, mais ça
-   n'a **pas été testé avec le vrai `claude`**. À faire dans une copie jetable,
-   pas dans un dossier réel.
+3. ~~Vérifier que `/demarrage` se déclenche vraiment.~~ ✅ **Fait le 24 août
+   2026.** Le skill démarre, détecte que `_ETAT.md` est un gabarit, vérifie le
+   connecteur d'agenda et suit ses étapes. La forme
+   `.claude/skills/<nom>/SKILL.md` fonctionne.
 4. **Pousser sur GitHub.** Rien n'est publié. Ça demande un compte et un dépôt vide.
    ⚠️ Le README contient encore `https://github.com/<toi>/cartable.git` — le `<toi>`
    doit être remplacé au moment de publier.
