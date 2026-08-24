@@ -171,6 +171,10 @@ Le dossier **`.claude` peut être caché**. Dans l'Explorateur Windows :
 `/demarrage` et `/maj` — sans lui, les commandes n'existent pas, et tu vas
 chercher pourquoi pendant une heure.
 
+> 📖 **Tu veux voir a quoi ca ressemble avant d'essayer ?**
+> [`docs/PREMIER-DEMARRAGE.md`](docs/PREMIER-DEMARRAGE.md) montre le parcours
+> au complet, de GitHub jusqu'a ta premiere question.
+
 ### Si tu préfères le terminal
 
 **Windows** (PowerShell) :
