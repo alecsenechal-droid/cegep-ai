@@ -140,7 +140,20 @@ même plateforme, ça devrait marcher — mais c'est pas vérifié.
 > ⚠️ **Le dépôt n'est pas encore publié.** Remplace `<toi>` par le vrai nom
 > d'utilisateur GitHub quand il le sera.
 
-### La façon simple — aucun terminal
+### La facon la plus simple — une phrase, pas une commande
+
+Ouvre l'**application Claude Code** (n'importe ou), et colle ca :
+
+```
+Installe Cartable pour moi : https://github.com/<toi>/cartable
+Suis les instructions dans INSTALL-AGENT.md du depot.
+```
+
+Il clone, il copie, il verifie, il nettoie, et il enchaine sur le demarrage.
+**Tu n'as rien d'autre a taper.** Il te posera une seule question au passage : ou
+tu veux ton dossier.
+
+### Ou à la main, si tu préfères voir ce qui se passe
 
 1. Sur la page du dépôt, clique le bouton vert **Code** → **Download ZIP**
 2. Décompresse le fichier
