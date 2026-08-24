@@ -1,316 +1,101 @@
 # Cégep AI
 
-**Ton Omnivox, mais utilisable.**
+**Ton dossier scolaire, mais utilisable.**
 
-Tes profs garrochent leurs calendriers de cours dans Léa — un Word, un PDF, un
-Excel — avec les devoirs et les remises cachés dedans. Les annonces arrivent par
-MIO. Ton horaire est ailleurs. **Rien de tout ça ne se parle**, pis c'est déjà tout
-dans le même portail.
+Cégep AI t’aide à garder tes documents de session dans un dossier local que tu peux comprendre, inspecter et personnaliser. Tu choisis ce que ton agent lit. Il peut résumer un plan de cours, te citer sa source, classer avec ton accord et t’aider à voir ce qui manque.
 
-Cégep AI lit tout ça une fois, remplit ton agenda, pis après tu lui poses tes
-questions comme à un chum qui aurait lu tous tes documents.
+> **Le premier objectif n’est pas de brancher Omnivox.** Commence avec un PDF que tu choisis, vois comment l’agent travaille, puis décide si tu veux aller plus loin.
 
-```
-/demarrage   une fois par session   →  tout ton Omnivox est lu, ton agenda est plein
-/maj         quand y'a du nouveau   →  MIO, documents, notes : tout se replace
-```
+## Commence ici
 
----
+Si tu connais Claude Chat, mais pas les agents de code, lis [`docs/START_HERE.md`](docs/START_HERE.md). Tu auras un premier résultat local en quelques minutes : un PDF dans `_inbox`, un résumé à côté et une réponse avec une source.
 
-## Ce que tu peux lui demander
-
-C'est là que ça devient intéressant. Il a lu tes plans de cours, tes travaux, tes
-MIO, ton horaire.
-
-**Sur ce qui s'en vient**
-> « C'est quoi qui s'en vient cette semaine ? »
-> « Où est mon local demain ? »
-> « J'ai-tu un conflit d'horaire cette semaine ? »
-
-**Sur tes travaux**
-> « Peux-tu m'aider avec mon devoir de math que je dois remettre demain ? »
-> « C'est quoi la matière à l'examen ? »
-> « Qu'est-ce qui compte le plus dans ma note en maths ? »
-
-**Sur ta session au complet**
-> « Tu penses que je vais devoir mettre combien d'heures d'étude cette semaine ? »
-> « Comment je pourrais être plus productif ? »
-> « Je peux-tu manquer le cours de jeudi ? »
-> « Qu'est-ce que j'ai manqué pendant que j'étais absent ? »
-
-### Et parfois, il va dire non
-
-> **Toi :** « Peux-tu m'aider avec mon devoir de math que je dois remettre demain ? »
->
-> **Cégep AI :** « Ton plan de cours de maths dit que l'IA n'est pas permise pour
-> les travaux notés. Je peux t'expliquer la matière si tu veux comprendre, mais je
-> ne ferai pas le devoir. »
-
-C'est voulu. Il lit la politique d'IA de **chaque** plan de cours et il l'applique
-cours par cours. Si c'est pas écrit clairement, il prend la position la plus
-prudente **pis il te le dit**.
-
-C'est pas un cadenas — t'as juste à ouvrir ChatGPT dans un autre onglet. C'est pour
-que tu saches toujours où tu te situes par rapport à ton prof.
-
----
-
-## C'est quoi Claude in Chrome, pis pourquoi t'en as besoin
-
-**En deux phrases :** c'est une extension qui laisse Claude voir ton navigateur et
-cliquer dedans, comme si un chum prenait la souris à côté de toi. Sans ça, Claude
-Code reste dans ton terminal et **il ne peut pas entrer dans Omnivox**.
-
-Pourquoi c'est nécessaire : Omnivox demande une connexion. Un programme ne peut pas
-rentrer là tout seul, pis c'est correct de même. Mais toi, t'es **déjà connecté**
-dans ton navigateur — tu l'ouvres cinq fois par jour. Claude in Chrome utilise
-cette session-là.
-
-**C'est pour ça qu'on ne te demandera jamais ton mot de passe.** Tu te connectes
-comme d'habitude, il lit ce qui est à l'écran. Rien de plus.
-
-> ⚠️ **Claude in Chrome dépend de ton forfait Anthropic.** Vérifie que tu peux
-> l'installer **avant** de commencer — c'est le seul truc qui peut vraiment
-> bloquer.
->
-> **Si tu peux pas :** c'est pas fini. Tu télécharges tes plans de cours de Léa à
-> la main, tu les mets dans `_inbox/`, pis le reste marche pareil. Ça te prend
-> dix minutes, une fois par session.
-
----
-
-## Pourquoi brancher ton agenda perso
-
-Parce que ton téléphone sonne tout seul. C'est tout.
-
-Tu n'as pas à ouvrir Cégep AI pour savoir où t'en es — **ton examen apparaît dans
-l'agenda que t'as déjà**, avec un rappel, comme tes autres affaires.
-
-### Ce qui va s'écrire dedans
-
-| Ce qui rentre | À quoi ça ressemble |
+| Tu veux… | Ouvre… |
 |---|---|
-| **Tes cours récurrents** | *Mesure du travail* · 9 h à 12 h · **Q2183** · Rémy Bédard |
-| **Tes examens** | *Examen 2 — Mathématiques (20 %)* · le 9 octobre |
-| **Tes remises** | *Remise du rapport de laboratoire* · le 14 novembre, 23 h 59 |
-| **Tes sorties et activités** | *Sortie en entreprise — Mesure du travail* · 8 h à 12 h |
+| Installer le dossier sans Git ni terminal | [`docs/INSTALL-DESKTOP.md`](docs/INSTALL-DESKTOP.md) |
+| Comprendre avant de laisser l’agent écrire | [`docs/PROMPTS-DEPART.md`](docs/PROMPTS-DEPART.md) |
+| Réparer une erreur sans tout supprimer | [`docs/RECUPERER.md`](docs/RECUPERER.md) |
+| Capturer rapidement du texte depuis Chrome | [`docs/INSTALLATION.md`](docs/INSTALLATION.md) — optionnel |
 
-Tout ça va dans un calendrier séparé appelé **« Cégep »**, pour que tu puisses le
-cacher ou l'effacer d'un coup sans toucher au reste.
+## Le modèle mental
 
-### Ce qui ne rentre PAS
+```text
+GitHub distribue le template
+        ↓
+Documents/CegepAI est ton dossier personnel local
+        ↓
+Ton agent lit seulement les fichiers que tu choisis
+        ↓
+Tu vois le plan, acceptes ou refuses les changements
+```
 
-- **Une date pas sûre.** Si ton prof a juste écrit « semaine 6 », ça reste marqué
-  ❓ dans ton `_ETAT.md` jusqu'à ce que ce soit confirmé. Mieux vaut pas de date
-  qu'une mauvaise date.
-- **Une tâche sans date.**
+GitHub n’est pas l’endroit où tes documents scolaires doivent vivre. Le dépôt contient le gabarit et les guides; ton travail, tes plans de cours et tes préférences restent dans `Documents\CegepAI`.
 
-### Tu utilises quoi comme agenda ?
+## Ce qui est disponible, dépendant ou à tester
 
-| Toi | Ce qui arrive |
-|---|---|
-| **Google Agenda** | branché en direct, ça se met à jour tout seul |
-| **Apple, Outlook, autre** | tu reçois un fichier `.ics`, tu double-cliques, c'est importé |
-| **Rien pour l'instant** | il te montre les dates à l'écran, tu décides plus tard |
-
-⚠️ **Ça écrit dans ton agenda, ça ne le relit pas.** Si tu changes une affaire
-directement dans Google Agenda, Cégep AI ne le saura pas. Une information à deux
-places, ça finit toujours par se contredire — pis c'est toujours toi qui manges la
-volée.
-
----
-
-## Ce qu'il te faut
-
-| Outil | Obligatoire ? | Pourquoi |
+| Capacité | Statut | Ce que ça veut dire |
 |---|---|---|
-| **Claude Code** | ✅ oui | c'est lui qui lit, classe et répond |
-| **Claude in Chrome** | ✅ oui | c'est lui qui va dans Omnivox à ta place |
-| **Ton agenda** | recommandé | Google en direct, les autres par `.ics` |
-| **git** | ✅ oui | pour cloner le dépôt |
+| Dossier local, `_inbox`, règles de classement et sources | **Disponible maintenant** | Le template contient les fichiers et les consignes. |
+| Premier PDF local, résumé et réponse citée | **Dépend de ton agent** | Un agent avec accès au dossier peut suivre les règles du template. |
+| Claude Desktop / Claude Code | **Parcours recommandé** | Le plus naturel si tu connais déjà Claude Chat et veux travailler dans un dossier local. |
+| Codex, Cursor, Antigravity | **À tester** | Le template est lisible, mais chaque agent doit être testé avant une promesse de compatibilité. |
+| Claude in Chrome et Omnivox | **Avancé / dépend de ton agent** | Ça demande un navigateur, les bonnes permissions et parfois un forfait compatible. Tu te connectes toujours toi-même. |
+| Extension de capture Chrome | **Optionnelle** | Elle envoie une sélection ou un lien vers `_inbox`; elle se charge manuellement en mode développeur. |
+| Agenda Google direct ou `.ics` | **À valider** | Ne le considère pas comme une fonction garantie du template seul. |
 
-Testé sur **Omnivox / Léa au Cégep Limoilou**. Les autres cégeps roulent sur la
-même plateforme, ça devrait marcher — mais c'est pas vérifié.
-👉 **Si t'es dans un autre cégep, ouvre une issue pis dis-nous si ça marche.**
+## Installer
 
----
+La voie la plus simple est expliquée dans [`docs/INSTALL-DESKTOP.md`](docs/INSTALL-DESKTOP.md) : télécharge le ZIP, copie `dossier-type` vers `Documents\CegepAI`, puis ouvre ce dossier dans ton agent.
 
-## Installation
+Si ton agent peut lire le dépôt GitHub et faire l’installation pour toi, copie ce message :
 
-### La façon la plus simple — une phrase, pas une commande
-
-Ouvre l'**application Claude Code** (n'importe où), et colle ça :
-
-```
+```text
 Installe Cégep AI pour moi : https://github.com/alecsenechal-droid/cegep-ai
-Suis les instructions dans INSTALL-AGENT.md du dépôt.
+Suis INSTALL-AGENT.md. Avant d’écrire, explique-moi où mon dossier sera créé,
+ce qui sera copié et comment je pourrai revenir en arrière. Attends mon OK.
 ```
 
-Il clone, il copie, il vérifie, il nettoie, et il enchaîne sur le démarrage.
-**Tu n'as rien d'autre à taper.** Il te posera une seule question au passage : où
-tu veux ton dossier.
+L’agent ne doit jamais te demander ton mot de passe Omnivox. Il doit écrire seulement dans le dossier que tu as approuvé.
 
-### Ou à la main, si tu préfères voir ce qui se passe
+## Les quatre éléments essentiels
 
-1. Sur la page du dépôt, clique le bouton vert **Code** → **Download ZIP**
-2. Décompresse le fichier
-3. Prends le dossier **`dossier-type`**, renomme-le **`CegepAI`**, et glisse-le
-   dans tes **Documents**
-4. Ouvre l'**application Claude Code** et ouvre ce dossier-là
-5. Tape `/demarrage`
+Après l’installation, `Documents\CegepAI` doit contenir :
 
-C'est tout. Pas de ligne de commande, pas de commande à copier-coller.
-
-> 💡 **Utilise l'application, pas le terminal.** Claude Code existe en application
-> pour Windows et Mac. C'est le même outil, mais lisible : les réponses sont
-> formatées, les fichiers sont cliquables, et tu vois ce qui se passe. Le terminal
-> marche aussi, mais c'est dur à lire quand on découvre.
-
-### ⚠️ Vérifie avant de commencer
-
-Dans ton dossier `CegepAI`, tu dois voir **quatre choses** :
-
-```
+```text
 CLAUDE.md    _ETAT.md    _inbox    .claude
 ```
 
-Le dossier **`.claude` peut être caché**. Dans l'Explorateur Windows :
-**Affichage → Afficher → Éléments masqués**. Sur Mac : `Cmd + Shift + .`
-
-**S'il manque, arrête tout et recopie-le à la main.** C'est lui qui contient
-`/demarrage` et `/maj` — sans lui, les commandes n'existent pas, et tu vas
-chercher pourquoi pendant une heure.
-
-> 📖 **Tu veux voir a quoi ca ressemble avant d'essayer ?**
-> [`docs/PREMIER-DEMARRAGE.md`](docs/PREMIER-DEMARRAGE.md) montre le parcours
-> au complet, de GitHub jusqu'a ta premiere question.
-
-### Si tu préfères le terminal
-
-**Windows** (PowerShell) :
-
-```powershell
-git clone https://github.com/alecsenechal-droid/cegep-ai.git
-New-Item -ItemType Directory -Force "$env:USERPROFILE\Documents\CegepAI" | Out-Null
-Copy-Item -Path "cegep-ai\dossier-type\*" -Destination "$env:USERPROFILE\Documents\CegepAI" -Recurse -Force
-cd "$env:USERPROFILE\Documents\CegepAI"
-```
-
-**macOS / Linux** :
-
-```bash
-git clone https://github.com/alecsenechal-droid/cegep-ai.git
-mkdir -p ~/Documents/CegepAI
-cp -R cegep-ai/dossier-type/. ~/Documents/CegepAI/
-cd ~/Documents/CegepAI
-```
-
-Puis `claude`, et `/demarrage`.
-
-## Ce que `/demarrage` fait
-
-Il te pose **une seule question** — à quel cégep tu es — pis il te demande
-d'**ouvrir Omnivox et de te connecter toi-même**.
-
-Ton programme, ta session, ton horaire, tes profs : il les lit lui-même. Te les
-faire retaper serait exactement le travail qu'on te promet d'éviter.
-
-Ensuite il fait le grand tour, une seule fois :
-
-- il passe à travers **chaque cours** : documents, travaux, notes, communiqués, MIO
-- il **télécharge et résume tes plans de cours**
-- il trouve la **politique d'IA de chaque cours**
-- il remplit **`_ETAT.md`** : tes cours, ton horaire, tes locaux, tes profs, tes
-  pondérations, pis ce qui reste à confirmer
-- il remplit **ton agenda**
-
-> ⏱️ Le grand tour prend quelques minutes pis ça consomme pas mal de jetons. Il va
-> te proposer de **commencer par un seul cours** pour que tu voies le résultat
-> avant de tout faire. Prends l'offre.
-
----
-
-## Ensuite, `/maj`
-
-Quand y'a du nouveau — un MIO, un document déposé, une note publiée :
-
-```
-/maj
-```
-
-Il regarde **juste ce qui a changé**, met ton agenda pis ton `_ETAT.md` à jour.
-
-Pis surtout : **il croise.** Un MIO qui déplace un cours contre ton horaire, une
-nouvelle date contre tes autres examens. C'est là qu'il te sort les conflits que
-t'aurais pas vus tout seul.
-
----
-
-## Où vit quoi — la règle la plus importante
-
-| Ce qui est gardé | Où |
+| Élément | À quoi il sert |
 |---|---|
-| **Une date, une heure, un local** | **ton agenda**, avec les rappels sur ton téléphone |
-| **Ce qui est vérifié / supposé, les règles, les pondérations** | **`_ETAT.md`** |
-| **Le contenu détaillé** | le document d'origine et son résumé |
+| `CLAUDE.md` | Les règles permanentes de ton système. |
+| `_ETAT.md` | Ta vue d’ensemble : ce qui est vérifié, ce qui reste à confirmer. |
+| `_inbox` | L’endroit où arrivent les documents nouveaux à traiter. |
+| `.claude` | Les compétences `/demarrage`, `/maj` et `/inbox` pour les agents qui les prennent en charge. |
 
-**Une information à deux places, c'est une information qui va finir par se
-contredire.** C'est la règle numéro un du projet.
+Le dossier `.claude` peut être caché. Sous Windows : **Affichage → Afficher → Éléments masqués**.
 
----
+## Comment garder le contrôle
 
-## L'extension Chrome — optionnelle
+Commence toujours par :
 
-T'en as **pas besoin** pour Omnivox : `/demarrage` et `/maj` s'en occupent.
+> « Avant de modifier mes fichiers, montre-moi ton plan en 5 lignes et attends mon OK. »
 
-Elle sert à la **capture rapide** : clic droit sur n'importe quoi, n'importe où.
-Zéro token, zéro attente. Partir un agent juste pour sauver un message, c'est long
-pour rien.
+Tu peux demander à l’agent de citer ses sources, de proposer deux classements, d’expliquer un changement ou de revenir en arrière. Le guide [`docs/PROMPTS-DEPART.md`](docs/PROMPTS-DEPART.md) te donne des messages prêts à utiliser.
 
-🔒 **Une règle qui bouge pas, peu importe d'où ça vient : les noms des autres, on
-les garde pas.** Lire un groupe de 28 personnes, c'est voir les messages de 27
-personnes qui t'ont rien demandé.
+Les originaux restent les originaux. Un PDF reste un PDF; un résumé est ajouté à côté. Quand l’information est incertaine, le système doit dire **« à confirmer »** au lieu de deviner.
 
-Installation : [`docs/INSTALLATION.md`](docs/INSTALLATION.md).
+## Omnivox, navigateur et agenda : seulement après le premier essai
 
-**Suggestion : essaie sans l'extension au début.** `/demarrage` et `/maj` suffisent
-pour voir si l'affaire te sert.
+Quand ton PDF local fonctionne, tu peux explorer les étapes avancées. Selon l’agent que tu utilises, il peut être possible de travailler dans un navigateur déjà ouvert ou d’ajouter des dates à un agenda. Ces fonctions ne sont pas garanties par les fichiers de ce dépôt seuls : elles dépendent de l’agent, de ses permissions et des connecteurs disponibles.
 
----
+Tu ne donnes jamais ton mot de passe Omnivox à Cégep AI. Tu te connectes toi-même dans ton navigateur. Si un outil demande ton mot de passe, arrête-toi et vérifie.
 
-## Les conventions
+## Extension Chrome — optionnelle
 
-Tout est dans [`dossier-type/CLAUDE.md`](dossier-type/CLAUDE.md).
-
-| Règle | Pourquoi |
-|---|---|
-| Tout arrive dans `_inbox/`, jamais ailleurs | ce qui est neuf doit se voir d'un coup d'œil |
-| Un PDF reste un PDF, avec un `-resume.md` à côté | convertir détruit les tableaux; le résumé coûte une seule lecture |
-| ✅ vérifié / ❓ supposé, toujours séparés | une supposition présentée comme un fait finit par coûter cher |
-| Les dates vivent dans ton agenda, pas dans un fichier | deux copies vont diverger |
-| Les noms des autres sont pas recopiés | c'est tes chums, c'est pas tes données |
-| La politique d'IA du prof est respectée, cours par cours | voir plus haut |
-
----
-
-## Ce que ça fait pas
-
-- **On te demandera jamais ton mot de passe Omnivox.** Tu te connectes toi-même,
-  Cégep AI lit la session déjà ouverte. Si un outil te demande ce mot de passe-là,
-  peu importe lequel, méfie-toi.
-- **Rien se fait sans que tu le demandes.** Ton agent va où tu lui dis d'aller.
-- **Rien tourne en arrière-plan.** Pas de surveillance, pas de tâche planifiée.
-- **Aucune donnée sort de ton ordinateur** — à part ce que ton propre agent envoie,
-  sous ton contrôle.
-
----
+L’extension sert à capturer rapidement un texte, une image ou un lien dans `_inbox`. Elle ne remplace pas le premier essai local. Lis [`docs/INSTALLATION.md`](docs/INSTALLATION.md) seulement quand le dossier te sert déjà et que tu comprends le lien entre `Téléchargements\CegepAI` et `_inbox`.
 
 ## État du projet
 
-Jeune, pis écrit par un étudiant de cégep pour lui-même avant d'être publié. Les
-sélecteurs de Léa sont validés sur un vrai compte, mais Skytech peut changer son
-HTML sans avertir.
-
-Les issues et les retours d'autres cégeps sont les bienvenus.
+Cégep AI est un prototype ouvert, créé pour tester un système scolaire local avec des étudiants. Les retours de testeurs sont bienvenus, surtout si tu es dans un autre cégep ou utilises un autre agent. Ouvre une Issue pour décrire ce qui a marché, ce qui a bloqué et le premier mot que tu n’as pas compris.
 
 MIT.

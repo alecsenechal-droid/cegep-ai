@@ -64,17 +64,23 @@ dis-lui où elle est et renvoie-le à `docs/INSTALLATION.md`.
 
 ---
 
-## 5. Enchaîner tout de suite
+## 5. Premier succès local avant tout le reste
 
-**Si tu peux déjà travailler dans son nouveau dossier :** ne lui fais rien
-rouvrir. Lis `dossier-type/.claude/skills/demarrage/SKILL.md` et **suis-le
-directement.** Le skill est un fichier de consignes — tu n'as pas besoin que la
-commande slash existe pour l'appliquer.
+Ne commence pas automatiquement par Omnivox, un navigateur, une extension ou un
+agenda. L'étudiant doit d'abord comprendre son dossier et voir un résultat simple
+avec un document qu'il choisit.
 
-**Sinon**, dis-lui exactement ceci :
+Explique-lui exactement ceci :
 
 > C'est installé dans `<destination>`.
-> Ouvre ce dossier-là dans l'application Claude Code, et tape `/demarrage`.
+> Commence avec un PDF de cours que tu choisis : mets-le dans `_inbox`, ouvre ce
+> dossier dans ton agent et demande un plan avant toute écriture.
+> Le guide `docs/START_HERE.md` du dépôt te donne les deux messages à coller.
+
+Si tu peux déjà travailler dans son nouveau dossier, lis `CLAUDE.md`, puis propose
+ce premier essai local. **Attends son accord clair** avant de lire ou créer un
+fichier. N'applique pas `/demarrage` par défaut : cette compétence peut dépendre
+d'un navigateur et de capacités que l'agent n'a pas forcément.
 
 ---
 
@@ -85,4 +91,5 @@ commande slash existe pour l'appliquer.
 - Écrire quoi que ce soit ailleurs que dans le dossier de destination.
 - Modifier un dossier scolaire qui existe déjà. Si la destination contient déjà un
   `_ETAT.md` rempli, **arrête et demande** avant de rien écraser.
-- Poser plus d'une question. Tout le reste se lit ou se déduit.
+- Partir un navigateur, connecter un agenda ou installer une extension avant que
+  l'étudiant ait réussi son premier document local.

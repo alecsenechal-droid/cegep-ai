@@ -1,5 +1,9 @@
 # Installation
 
+## Extension avancée — à faire après ton premier PDF local
+
+Cette extension est optionnelle. Utilise-la seulement après avoir réussi le parcours de [`START_HERE.md`](START_HERE.md) : un PDF dans `_inbox`, un résumé cité et un classement que tu comprends. Elle sert à capturer vite une sélection, une image ou un lien; elle n’est pas nécessaire pour commencer Cégep AI.
+
 ## Pourquoi il faut un lien
 
 Chrome ne laisse pas une extension écrire où elle veut sur le disque.
@@ -69,7 +73,7 @@ Si `verification.txt` apparaît, le lien fonctionne. Supprime-le ensuite.
 4. Après chaque modification de `config.js`, reviens ici et clique **↻**
 
 Pour tester : sélectionne du texte sur n'importe quelle page, clic droit,
-**Envoyer au dossier Ecole** → choisis une destination. Un `.md` daté doit
+**Envoyer à Cégep AI** → choisis une destination. Un `.md` daté doit
 apparaître dans ton `_inbox/`.
 
 ---
