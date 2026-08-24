@@ -2,124 +2,125 @@
 
 **Ton dossier scolaire qu'un agent IA peut vraiment lire.**
 
-Une extension Chrome qui capture ce que ton cégep t'envoie — un document dans
-Léa, un MIO, un message de coach, un lien — et le dépose dans un dossier avec sa
-source et sa date. Ensuite, ton agent (Claude Code, Codex, ou un autre) le classe,
-le résume, et répond à tes questions à partir de tes vrais documents.
+Tes profs déposent leur calendrier de cours dans Léa — un Word, un PDF, un Excel —
+avec les devoirs et les remises dedans. Pour savoir ce qui s'en vient cette
+semaine, tu dois ouvrir chaque document, de chaque cours.
+
+Cartable lit tout ça une fois, le range, le résume, et répond à tes questions à
+partir de tes vrais documents.
 
 ---
 
 ## ⚠️ Pour qui c'est, honnêtement
 
-**Il te faut déjà un agent de codage** — Claude Code, Codex, ou équivalent — et
-être à l'aise d'ouvrir un terminal.
-
-Si tu n'as pas ça, ce dépôt ne te servira à rien pour l'instant. Une version sans
-terminal est en préparation.
+**Il te faut Claude Code** (ou Codex, ou un agent équivalent) et être à l'aise
+d'ouvrir un terminal. Si tu n'as pas ça, ce dépôt ne te servira à rien pour
+l'instant.
 
 Testé sur **Omnivox / Léa au Cégep Limoilou**. Les autres cégeps roulent sur la
-même plateforme, alors ça devrait marcher ailleurs — mais ce n'est pas vérifié.
+même plateforme, alors ça devrait marcher — mais ce n'est pas vérifié.
 👉 **Si tu es dans un autre cégep, ouvre une issue et dis-nous si ça marche.**
 C'est le coup de main le plus utile que tu peux donner.
 
 ---
 
-## Le problème que ça règle
-
-Tes profs déposent leur calendrier de cours dans Léa — un Word, un PDF, un Excel —
-avec les devoirs et les remises dedans. Rien n'est structuré. Pour savoir ce qui
-s'en vient cette semaine, tu dois **ouvrir chaque document, de chaque cours.**
-
-L'information existe. Elle est juste illisible en pratique.
-
----
-
-## Ce que tu obtiens
-
-```
-tu sélectionnes un texte  →  clic droit  →  ton cours
-                                                ↓
-                             un .md daté dans ton dossier, avec sa source
-                                                ↓
-                                  ton agent le classe et le résume
-```
-
-- **Capture par clic droit** — texte, images, liens. Partout : Léa, MIO,
-  Messenger, un site du cégep, un PDF affiché dans Chrome.
-- **La source est toujours écrite** — d'où ça vient, quand, et sur quoi
-  l'extension s'est basée pour deviner. Aucune déduction silencieuse.
-- **Le code de cours est lu dans la page de Léa**, pas deviné à partir de l'URL.
-- **Un fichier d'instructions pour ton agent** qui contient les conventions :
-  quoi résumer, quoi vérifier, quoi ne jamais garder.
-
----
-
-## Installation
-
-**1. Clone le dépôt**
+## Installation — trois commandes
 
 ```bash
 git clone https://github.com/<toi>/cartable.git
-cd cartable
+cp -r cartable/dossier-type ~/Documents/Cartable
+cd ~/Documents/Cartable && claude
 ```
 
-**2. Crée ton dossier scolaire**
+Puis, dans Claude :
 
-Copie `dossier-type/` où tu veux — par exemple `Documents/Cartable`.
-
-**3. Fais le lien vers Téléchargements**
-
-Chrome ne peut écrire que dans Téléchargements. Un lien règle ça, une fois pour
-toutes, sans programme en arrière-plan.
-
-Windows :
-```bash
-mklink /J "%USERPROFILE%\Downloads\Cartable" "%USERPROFILE%\Documents\Cartable\_inbox"
+```
+/demarrage
 ```
 
-macOS ou Linux :
-```bash
-ln -s ~/Documents/Cartable/_inbox ~/Downloads/Cartable
+**C'est tout.** Le skill te pose **trois questions** — ton cégep, ton programme, ta
+session — puis il fait le reste.
+
+### Ce qu'il fait, et ce qu'il te demande
+
+| Il fait | Il te demande |
+|---|---|
+| lit ta liste de cours, ton horaire, tes locaux, tes profs | **d'ouvrir Omnivox et de te connecter toi-même** |
+| télécharge et résume tes plans de cours | de confirmer avant qu'il touche à ton navigateur |
+| trouve la **politique d'IA de chaque cours** | rien d'autre |
+| remplit `_ETAT.md` | |
+
+**Il n'entre jamais ton mot de passe.** Tu te connectes, il lit. C'est la règle, et
+elle ne bougera pas.
+
+Le principe du skill : **ne jamais demander ce qu'il peut lire.** Ton horaire est
+déjà dans Omnivox — te le faire retaper serait exactement le travail qu'on te
+promet d'éviter.
+
+> ⏱️ L'import initial prend quelques minutes et consomme des jetons. C'est une
+> fois par session, pas tous les jours.
+
+**Pas de Claude in Chrome ?** Le skill bascule tout seul : il te demande de
+déposer tes plans de cours dans `_inbox/` à la main, et continue pareil.
+
+---
+
+## Au quotidien
+
+```
+/inbox
 ```
 
-**4. Mets tes cours dans `extension/config.js`**
+ou simplement « traite mon inbox ». Il classe, résume, met `_ETAT.md` à jour, et
+te dit ce qu'il a écarté.
 
-C'est le seul fichier à modifier.
+Ensuite tu poses tes questions normalement :
 
-**5. Charge l'extension**
+- « Comment je fais le devoir d'aujourd'hui ? »
+- « Où est mon local pour la sortie de demain ? »
+- « C'est quoi qui s'en vient cette semaine ? »
 
-`chrome://extensions` → Mode développeur → *Charger l'extension non empaquetée* →
-choisis le dossier `extension/`.
+---
 
-**6. Pointe ton agent sur ton dossier**
+## L'extension Chrome — optionnelle
 
-```bash
-cd ~/Documents/Cartable
-claude
-```
+Si tu as Claude in Chrome, **tu n'en as pas besoin pour Omnivox.** L'agent navigue
+tout seul.
 
-Il lira `CLAUDE.md` et `_ETAT.md` tout seul.
+Elle reste utile pour deux choses :
+
+- **La capture rapide** — un clic droit, zéro token, zéro attente. Faire démarrer
+  un agent pour sauver un message, c'est lent.
+- **Messenger et Facebook** — et là elle est **obligatoire**. Faire naviguer un
+  agent dans Messenger, ce serait du scraping de Meta : contraire à leurs
+  conditions, et ça capturerait la vie privée de tes contacts. La capture s'y fait
+  par sélection, c'est-à-dire **par toi**.
+
+Installation : voir [`docs/INSTALLATION.md`](docs/INSTALLATION.md). Il faut créer
+un lien entre `Téléchargements/Cartable` et ton `_inbox/`, parce que Chrome refuse
+d'écrire ailleurs que dans Téléchargements.
 
 ---
 
 ## Les conventions
 
 Elles sont dans [`dossier-type/CLAUDE.md`](dossier-type/CLAUDE.md), et c'est la
-partie qui compte le plus. En résumé :
+partie qui compte le plus.
 
 | Règle | Pourquoi |
 |---|---|
 | Tout arrive dans `_inbox/`, jamais ailleurs | ce qui est neuf doit se voir d'un coup d'œil |
-| Un PDF reste un PDF, avec un `-resume.md` à côté | convertir détruit les schémas; le résumé coûte une seule lecture |
+| Un PDF reste un PDF, avec un `-resume.md` à côté | convertir détruit les tableaux; le résumé coûte une seule lecture |
 | ✅ vérifié / ❓ supposé, toujours distingués | une supposition présentée comme un fait finit par coûter cher |
 | Les dates vivent dans **ton agenda**, pas dans un fichier | une information à deux endroits va diverger |
 | Les noms des autres ne sont pas recopiés | ce sont tes camarades, pas tes données |
-| **La politique d'IA du prof est respectée, cours par cours** | voir plus bas |
+| **La politique d'IA du prof est respectée, cours par cours** | voir ci-dessous |
 
 ### La règle des profs
 
 Si le plan de cours dit que l'IA n'est pas permise, **l'agent refuse d'aider pour
-ce cours-là**. Il lit la politique dans le plan de cours et l'applique.
+ce cours-là.** Il lit la politique dans le plan de cours et l'applique. Si elle est
+absente ou ambiguë, il prend la position la plus restrictive **et te le dit**.
 
 Ce n'est pas un verrou — n'importe qui peut ouvrir ChatGPT dans un autre onglet.
 C'est une règle de confiance : tu sais toujours où tu te situes par rapport au
@@ -130,10 +131,7 @@ règlement de ton cours.
 ## Ce que ça ne fait pas, et ne fera jamais
 
 - **Aucune connexion automatique à Omnivox.** Toi seul entres ton mot de passe.
-  Rien n'est stocké, aucun serveur ne se connecte à ta place.
-- **Aucun scraping de Facebook ou Messenger.** La capture s'y fait par sélection,
-  c'est-à-dire par toi. C'est contraire aux conditions de Meta, et ça capturerait
-  la vie privée de tes contacts.
+- **Aucun scraping de Facebook ou Messenger.**
 - **Rien ne tourne en arrière-plan.** Pas de surveillance, pas de tâche planifiée.
 - **Aucune donnée ne quitte ton ordinateur** — sauf ce que ton propre agent
   envoie, sous ton contrôle.
