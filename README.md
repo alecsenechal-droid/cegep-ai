@@ -137,15 +137,12 @@ même plateforme, ça devrait marcher — mais c'est pas vérifié.
 
 ## Installation
 
-> ⚠️ **Le dépôt n'est pas encore publié.** Remplace `<toi>` par le vrai nom
-> d'utilisateur GitHub quand il le sera.
-
 ### La façon la plus simple — une phrase, pas une commande
 
 Ouvre l'**application Claude Code** (n'importe où), et colle ça :
 
 ```
-Installe Cartable pour moi : https://github.com/<toi>/cartable
+Installe Cartable pour moi : https://github.com/alecsenechal-droid/cartable
 Suis les instructions dans INSTALL-AGENT.md du dépôt.
 ```
 
@@ -193,7 +190,7 @@ chercher pourquoi pendant une heure.
 **Windows** (PowerShell) :
 
 ```powershell
-git clone https://github.com/<toi>/cartable.git
+git clone https://github.com/alecsenechal-droid/cartable.git
 New-Item -ItemType Directory -Force "$env:USERPROFILE\Documents\Cartable" | Out-Null
 Copy-Item -Path "cartable\dossier-type\*" -Destination "$env:USERPROFILE\Documents\Cartable" -Recurse -Force
 cd "$env:USERPROFILE\Documents\Cartable"
@@ -202,7 +199,7 @@ cd "$env:USERPROFILE\Documents\Cartable"
 **macOS / Linux** :
 
 ```bash
-git clone https://github.com/<toi>/cartable.git
+git clone https://github.com/alecsenechal-droid/cartable.git
 mkdir -p ~/Documents/Cartable
 cp -R cartable/dossier-type/. ~/Documents/Cartable/
 cd ~/Documents/Cartable

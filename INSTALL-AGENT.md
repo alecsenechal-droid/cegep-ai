@@ -8,7 +8,7 @@ dans l'ordre. **Il ne devrait avoir rien à taper d'autre.**
 ## 1. Récupérer le dépôt
 
 ```bash
-git clone https://github.com/<toi>/cartable.git
+git clone https://github.com/alecsenechal-droid/cartable.git
 ```
 
 Si `git` n'est pas installé, télécharge le ZIP et décompresse-le. **Ne demande pas
