@@ -29,7 +29,7 @@ Entre les deux, tu poses tes questions normalement :
 |---|---|---|
 | **Claude Code** | ✅ oui | c'est lui qui lit, classe et répond |
 | **Claude in Chrome** | ✅ oui | c'est lui qui va dans Omnivox à ta place |
-| **Un connecteur d'agenda** (Google Agenda) | recommandé | sans lui, tu entres les dates à la main |
+| **Ton agenda** — Google, Apple, Outlook | recommandé | Google par connecteur, les autres par fichier `.ics` |
 | **git** | ✅ oui | pour cloner le dépôt |
 
 > **Claude in Chrome dépend de ton forfait Anthropic.** Vérifie que tu peux
@@ -185,7 +185,9 @@ Tout est dans [`dossier-type/CLAUDE.md`](dossier-type/CLAUDE.md).
 
 ## Ce que ça ne fait pas
 
-- **Aucune connexion automatique à Omnivox.** Toi seul entres ton mot de passe.
+- **On ne te demandera jamais ton mot de passe Omnivox.** Tu te connectes toi-même
+  dans ton navigateur, Cartable lit la session déjà ouverte. Il n'a besoin de rien
+  d'autre — et si un outil te demande ce mot de passe, quel qu'il soit, méfie-toi.
 - **Rien n'est fait sans que tu le demandes.** Ton agent va où tu lui dis d'aller.
 - **Rien ne tourne en arrière-plan.** Pas de surveillance, pas de tâche planifiée.
 - **Aucune donnée ne quitte ton ordinateur** — sauf ce que ton propre agent envoie,

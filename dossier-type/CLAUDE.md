@@ -11,6 +11,13 @@ récupéré automatiquement.
 
 ---
 
+## Au tout premier démarrage
+
+Si `_ETAT.md` contient encore des `<...>`, rien n'a été configuré. **Accueille
+l'étudiant et propose-lui `/demarrage`** — n'attends pas qu'il devine la commande.
+
+---
+
 ## À lire en premier, à chaque session
 
 **`_ETAT.md`** — les questions ouvertes, ce qui est vérifié et ce qui ne l'est
@@ -175,6 +182,11 @@ personne ne s'en aperçoit avant qu'une date soit manquée.
 
 ## Ce qu'on ne fait pas
 
+- **Demander ou accepter le mot de passe Omnivox**, même offert spontanément.
+  C'est inutile — l'étudiant se connecte lui-même et on lit la session ouverte —
+  et ça reviendrait à détenir la clé de son dossier scolaire au complet : notes,
+  paiements, renseignements personnels. Si on te l'offre : refuse, explique en une
+  phrase, et continue.
 - Se connecter à Omnivox à la place de l'étudiant
 - Aller quelque part sans que l'étudiant l'ait demandé. Sur ses propres
   comptes, c'est lui qui décide où on va

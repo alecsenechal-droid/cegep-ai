@@ -1,34 +1,68 @@
 ---
 name: demarrage
-description: Le grand balayage initial. Parcourt tout Omnivox une fois, construit la vue d'ensemble de l'étudiant dans _ETAT.md, et pousse son horaire et ses échéances dans son agenda. Se déclenche avec /demarrage, ou quand _ETAT.md est encore le gabarit.
+description: L'accueil et le grand balayage initial. Souhaite la bienvenue, vérifie l'outillage, parcourt tout Omnivox une fois, construit la vue d'ensemble dans _ETAT.md, et remplit l'agenda de l'étudiant. Se déclenche avec /demarrage, ou quand _ETAT.md est encore le gabarit.
 ---
 
-# Démarrage — le grand balayage
+# Démarrage — accueil et grand balayage
 
-Une seule fois par session. Tu parcours **tout Omnivox**, tu construis la vue
-d'ensemble de l'étudiant, et tu remplis son agenda. Après ça, `/maj` s'occupe du
+Une seule fois par session. Tu accueilles l'étudiant, tu vérifies son outillage, tu
+parcours **tout Omnivox**, et tu remplis son agenda. Après ça, `/maj` s'occupe du
 neuf.
 
-**Le principe : ne demande jamais ce que tu peux lire.** L'horaire, les locaux,
-les enseignants, les codes de cours sont tous dans Omnivox. Les poser en question,
+**Le principe : ne demande jamais ce que tu peux lire.** L'horaire, les locaux, les
+enseignants et les codes de cours sont tous dans Omnivox. Les poser en question,
 c'est faire faire à l'étudiant le travail qu'on lui promet d'éviter.
 
 ---
 
-## Étape 1 — Vérifier l'outillage
+## Étape 1 — L'accueil
 
-Il te faut :
+Commence par te présenter, court et clair :
 
-| Outil | Rôle | Si absent |
-|---|---|---|
-| **Claude in Chrome** | naviguer dans Omnivox | replis à l'étape 3 |
-| **Un connecteur d'agenda** | écrire les événements | tu listes les dates, l'étudiant les entre |
+> **Bienvenue dans Cartable.**
+>
+> Je vais lire ton Omnivox une seule fois, comprendre ta session, et remplir ton
+> agenda. Ensuite tu me poses tes questions normalement.
+>
+> Avant de commencer, deux minutes de préparation.
 
-Dis à l'étudiant ce que tu as et ce qui te manque, **avant de commencer**.
+### Ce qu'il te faut, et comment l'obtenir
 
-Lis ensuite `_ETAT.md`. S'il contient encore des `<...>`, c'est un premier
-démarrage. S'il est déjà rempli, **ne l'écrase pas** : demande si l'étudiant veut
-tout refaire ou juste compléter.
+**1. Claude in Chrome** — c'est lui qui va dans Omnivox.
+
+Explique à l'étudiant comment l'installer et vérifie qu'il l'a. **C'est le seul
+prérequis qui peut vraiment bloquer** : la disponibilité dépend de son forfait
+Anthropic.
+
+> **S'il ne peut pas l'installer :** ce n'est pas la fin. Demande-lui de
+> télécharger ses plans de cours depuis Léa et de les déposer dans `_inbox/`, puis
+> saute à l'étape 5. Ça lui prend une dizaine de minutes, une fois par session.
+
+**2. Son agenda** — demande-lui lequel il utilise :
+
+| Il répond | Tu fais |
+|---|---|
+| **Google Agenda** | utilise le connecteur d'agenda s'il en a un de branché |
+| **Apple, Outlook, autre** | tu génères un fichier `.ics` qu'il importe |
+| **Aucun / plus tard** | tu listes les dates à l'écran, il décide après |
+
+Le `.ics` marche avec **tous** les calendriers et ne demande aucune configuration.
+Utilise des identifiants d'événement stables pour que les mises à jour remplacent
+au lieu de dupliquer.
+
+### 🔒 Ce que tu ne demandes JAMAIS
+
+**Son mot de passe Omnivox.** Ni le sien, ni celui de personne, sous aucun
+prétexte, même s'il l'offre.
+
+Tu n'en as pas besoin : il se connecte lui-même dans son navigateur, et tu lis la
+session ouverte. Demander un mot de passe ne te donnerait aucune capacité de plus
+et te ferait détenir la clé de son dossier scolaire au complet.
+
+S'il te l'offre quand même : refuse, explique en une phrase, et continue.
+
+*(Son numéro de DA, par contre, est une donnée normale du dossier. Tu peux le
+noter s'il apparaît dans Omnivox.)*
 
 ---
 
@@ -42,6 +76,10 @@ Pose-les ensemble :
 
 C'est tout. Le reste se lit.
 
+Lis ensuite `_ETAT.md`. S'il contient encore des `<...>`, c'est un premier
+démarrage. S'il est déjà rempli, **ne l'écrase pas** : demande si l'étudiant veut
+tout refaire ou juste compléter.
+
 ---
 
 ## Étape 3 — Expliquer, puis attendre
@@ -51,18 +89,19 @@ Avant de toucher au navigateur, dis en langage simple :
 - **ce que tu vas faire** : ouvrir son Omnivox, parcourir ses cours, lire ses
   documents et ses MIO, télécharger ses plans de cours
 - **où tu ne vas pas** : nulle part ailleurs que dans Omnivox
-- **ce que tu ne feras jamais** : entrer son mot de passe
 - **le coût** : un balayage complet prend plusieurs minutes et consomme beaucoup
-  de jetons. **C'est une fois par session.**
+  de jetons
 
-Puis **attends une confirmation claire.**
+### Propose un seul cours d'abord
 
-Demande-lui d'**ouvrir Omnivox et de se connecter lui-même.** Tu n'entres jamais
-son mot de passe. Jamais.
+**Offre-lui de commencer par un cours**, de lui montrer le résultat, puis de
+continuer s'il aime ça.
 
-> **Sans Claude in Chrome :** demande-lui de télécharger ses plans de cours et de
-> les déposer dans `_inbox/`, puis saute à l'étape 5. Ça marche, ça lui prend une
-> dizaine de minutes.
+Ça donne de la valeur en deux minutes au lieu de dix, et ça évite qu'il frappe sa
+limite d'utilisation au premier essai sans avoir rien vu.
+
+Puis demande-lui d'**ouvrir Omnivox et de se connecter lui-même**, et **attends
+une confirmation claire.**
 
 ---
 
@@ -99,8 +138,8 @@ dossier** (programme, casier, numéro de DA).
 ### 🔒 Ce que tu ne recopies pas
 
 Les **noms des autres étudiants** — listes de classe, destinataires d'un MIO de
-groupe, coéquipiers. Garde le fait qui concerne l'étudiant, écarte le reste, et
-écris que tu l'as fait.
+groupe. Garde le fait qui concerne l'étudiant, écarte le reste, et écris que tu
+l'as fait.
 
 ---
 
@@ -162,16 +201,16 @@ Ce qui y va :
 
 Ce qui n'y va **pas** :
 
-- une date incertaine (« semaine 6 ») → elle reste en ❓ dans `_ETAT.md` jusqu'à
-  ce qu'elle soit confirmée
+- une date incertaine (« semaine 6 ») → elle reste en ❓ dans `_ETAT.md`
 - une tâche sans date
 
-⚠️ **Le flux va dans un seul sens.** Tu écris dans l'agenda; tu ne relis jamais
-ce que l'étudiant y a modifié comme si c'était une source. Deux vérités qui
-divergent, personne ne s'en aperçoit, et une date se perd.
+⚠️ **Le flux va dans un seul sens.** Tu écris dans l'agenda; tu ne relis jamais ce
+que l'étudiant y a modifié comme si c'était une source. Deux vérités qui divergent,
+personne ne s'en aperçoit, et une date se perd.
 
-**Sans connecteur d'agenda :** liste les dates à l'écran, groupées par semaine,
-prêtes à être entrées. Dis-lui qu'il peut brancher son agenda plus tard.
+**En mode `.ics`** : écris le fichier à la racine du dossier, dis-lui comment
+l'importer, et garde des identifiants d'événement stables pour que le prochain
+import mette à jour au lieu de dupliquer.
 
 ---
 
@@ -192,7 +231,8 @@ plus jamais à refaire le grand balayage.
 
 ## Ce que tu ne fais jamais
 
-- Entrer un mot de passe, ou te connecter à sa place
+- **Demander ou accepter un mot de passe**, même offert spontanément
+- Te connecter à la place de l'étudiant
 - Aller ailleurs que dans Omnivox pendant ce balayage
 - Écrire une date dans un fichier alors qu'elle appartient à son agenda
 - Recopier le nom d'un autre étudiant
