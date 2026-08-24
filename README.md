@@ -140,6 +140,39 @@ même plateforme, ça devrait marcher — mais c'est pas vérifié.
 > ⚠️ **Le dépôt n'est pas encore publié.** Remplace `<toi>` par le vrai nom
 > d'utilisateur GitHub quand il le sera.
 
+### La façon simple — aucun terminal
+
+1. Sur la page du dépôt, clique le bouton vert **Code** → **Download ZIP**
+2. Décompresse le fichier
+3. Prends le dossier **`dossier-type`**, renomme-le **`Cartable`**, et glisse-le
+   dans tes **Documents**
+4. Ouvre l'**application Claude Code** et ouvre ce dossier-là
+5. Tape `/demarrage`
+
+C'est tout. Pas de ligne de commande, pas de commande à copier-coller.
+
+> 💡 **Utilise l'application, pas le terminal.** Claude Code existe en application
+> pour Windows et Mac. C'est le même outil, mais lisible : les réponses sont
+> formatées, les fichiers sont cliquables, et tu vois ce qui se passe. Le terminal
+> marche aussi, mais c'est dur à lire quand on découvre.
+
+### ⚠️ Vérifie avant de commencer
+
+Dans ton dossier `Cartable`, tu dois voir **quatre choses** :
+
+```
+CLAUDE.md    _ETAT.md    _inbox    .claude
+```
+
+Le dossier **`.claude` peut être caché**. Dans l'Explorateur Windows :
+**Affichage → Afficher → Éléments masqués**. Sur Mac : `Cmd + Shift + .`
+
+**S'il manque, arrête tout et recopie-le à la main.** C'est lui qui contient
+`/demarrage` et `/maj` — sans lui, les commandes n'existent pas, et tu vas
+chercher pourquoi pendant une heure.
+
+### Si tu préfères le terminal
+
 **Windows** (PowerShell) :
 
 ```powershell
@@ -158,35 +191,7 @@ cp -R cartable/dossier-type/. ~/Documents/Cartable/
 cd ~/Documents/Cartable
 ```
 
-### ⚠️ Vérifie que la copie a marché avant de continuer
-
-```powershell
-Get-ChildItem -Force        # Windows
-```
-
-```bash
-ls -a                       # macOS / Linux
-```
-
-Tu dois voir **quatre choses** :
-
-```
-CLAUDE.md    _ETAT.md    _inbox/    .claude/
-```
-
-**Si `.claude/` manque, arrête tout et recopie-le à la main.** C'est lui qui
-contient `/demarrage` et `/maj` — sans lui, les commandes n'existent pas et tu vas
-chercher pourquoi pendant une heure.
-
-Ensuite seulement :
-
-```
-claude
-```
-
-puis `/demarrage`
-
----
+Puis `claude`, et `/demarrage`.
 
 ## Ce que `/demarrage` fait
 

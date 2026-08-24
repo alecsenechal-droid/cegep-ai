@@ -38,17 +38,18 @@ Anthropic.
 > télécharger ses plans de cours depuis Léa et de les déposer dans `_inbox/`, puis
 > saute à l'étape 5. Ça lui prend une dizaine de minutes, une fois par session.
 
-**2. Son agenda** — demande-lui lequel il utilise :
+**2. Son agenda.** ⚠️ **Vérifie toi-même avant de demander quoi que ce soit.**
+Si un connecteur d'agenda est déjà branché, tu le vois — poser la question serait
+lui faire répondre quelque chose que tu as déjà sous les yeux.
 
-| Il répond | Tu fais |
+| Ce que tu trouves | Ce que tu fais |
 |---|---|
-| **Google Agenda** | utilise le connecteur d'agenda s'il en a un de branché |
-| **Apple, Outlook, autre** | tu génères un fichier `.ics` qu'il importe |
-| **Aucun / plus tard** | tu listes les dates à l'écran, il décide après |
+| **un connecteur branché** | tu l'utilises. Tu le mentionnes en une ligne, tu ne demandes rien |
+| **aucun connecteur** | là seulement, tu demandes : « Tu veux tes dates dans ton agenda ? » et tu proposes un fichier `.ics` |
 
-Le `.ics` marche avec **tous** les calendriers et ne demande aucune configuration.
-Utilise des identifiants d'événement stables pour que les mises à jour remplacent
-au lieu de dupliquer.
+Le `.ics` marche avec **tous** les calendriers — Apple, Outlook, Google — et ne
+demande aucune configuration. Utilise des identifiants d'événement stables pour
+que les mises à jour remplacent au lieu de dupliquer.
 
 ### 🔒 Ce que tu ne demandes JAMAIS
 
