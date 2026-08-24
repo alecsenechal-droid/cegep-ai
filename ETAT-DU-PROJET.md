@@ -107,14 +107,20 @@ Ne pas les rouvrir sans raison neuve. Chacune a coûté une discussion.
    avant de distribuer.**
 2. **Tester l'installation comme un inconnu** : copier `dossier-type/`, lancer
    `claude`, faire `/demarrage`, et noter où ça bloque.
-3. **Pousser sur GitHub.** Rien n'est publié. Ça demande un compte et un dépôt vide.
+3. **Vérifier que `/demarrage` se déclenche vraiment.** Les skills sont dans
+   `dossier-type/.claude/skills/<nom>/SKILL.md`. La forme est la bonne, mais ça
+   n'a **pas été testé avec le vrai `claude`**. À faire dans une copie jetable,
+   pas dans un dossier réel.
+4. **Pousser sur GitHub.** Rien n'est publié. Ça demande un compte et un dépôt vide.
+   ⚠️ Le README contient encore `https://github.com/<toi>/cartable.git` — le `<toi>`
+   doit être remplacé au moment de publier.
 
 **Ensuite :**
 
-4. Donner le dépôt à 5-10 camarades qui ont un agent. **Mesurer s'ils reviennent
+5. Donner le dépôt à 5-10 camarades qui ont un agent. **Mesurer s'ils reviennent
    une deuxième fois sans qu'on leur demande** — c'est la seule question qui
    compte.
-5. Faire vérifier les sélecteurs de Léa par un étudiant d'un autre cégep.
+6. Faire vérifier les sélecteurs de Léa par un étudiant d'un autre cégep.
 
 ---
 

@@ -137,25 +137,54 @@ même plateforme, ça devrait marcher — mais c'est pas vérifié.
 
 ## Installation
 
+> ⚠️ **Le dépôt n'est pas encore publié.** Remplace `<toi>` par le vrai nom
+> d'utilisateur GitHub quand il le sera.
+
 **Windows** (PowerShell) :
 
 ```powershell
 git clone https://github.com/<toi>/cartable.git
-Copy-Item -Recurse cartable\dossier-type "$env:USERPROFILE\Documents\Cartable"
+New-Item -ItemType Directory -Force "$env:USERPROFILE\Documents\Cartable" | Out-Null
+Copy-Item -Path "cartable\dossier-type\*" -Destination "$env:USERPROFILE\Documents\Cartable" -Recurse -Force
 cd "$env:USERPROFILE\Documents\Cartable"
-claude
 ```
 
 **macOS / Linux** :
 
 ```bash
 git clone https://github.com/<toi>/cartable.git
-cp -r cartable/dossier-type ~/Documents/Cartable
+mkdir -p ~/Documents/Cartable
+cp -R cartable/dossier-type/. ~/Documents/Cartable/
 cd ~/Documents/Cartable
+```
+
+### ⚠️ Vérifie que la copie a marché avant de continuer
+
+```powershell
+Get-ChildItem -Force        # Windows
+```
+
+```bash
+ls -a                       # macOS / Linux
+```
+
+Tu dois voir **quatre choses** :
+
+```
+CLAUDE.md    _ETAT.md    _inbox/    .claude/
+```
+
+**Si `.claude/` manque, arrête tout et recopie-le à la main.** C'est lui qui
+contient `/demarrage` et `/maj` — sans lui, les commandes n'existent pas et tu vas
+chercher pourquoi pendant une heure.
+
+Ensuite seulement :
+
+```
 claude
 ```
 
-Puis, dans Claude : `/demarrage`
+puis `/demarrage`
 
 ---
 
