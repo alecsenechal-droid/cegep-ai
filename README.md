@@ -1,35 +1,69 @@
 # Cartable
 
-**Ton dossier scolaire qu'un agent IA peut vraiment lire.**
+**Ton Omnivox, mais utilisable.**
 
 Tes profs déposent leur calendrier de cours dans Léa — un Word, un PDF, un Excel —
-avec les devoirs et les remises dedans. Pour savoir ce qui s'en vient cette
-semaine, tu dois ouvrir chaque document, de chaque cours.
+avec les devoirs et les remises dedans. Les annonces arrivent par MIO. L'horaire
+est ailleurs. **Aucun de ces endroits ne parle aux autres**, et tout ça est déjà
+dans un seul portail.
 
-Cartable lit tout ça une fois, le range, le résume, et répond à tes questions à
-partir de tes vrais documents.
+Cartable lit tout ça une fois, remplit ton agenda, et répond ensuite à n'importe
+quelle question sur ta session — à partir de tes vrais documents.
+
+```
+/demarrage   une fois par session   →  tout Omnivox est lu, ton agenda est rempli
+/maj         quand il y a du neuf   →  MIO, documents, notes : tout se met à jour
+```
+
+Entre les deux, tu poses tes questions normalement :
+
+> « Comment je fais le devoir d'aujourd'hui ? »
+> « Où est mon local demain ? »
+> « C'est quoi qui s'en vient cette semaine ? »
 
 ---
 
-## ⚠️ Pour qui c'est, honnêtement
+## ⚠️ Ce qu'il te faut avant de commencer
 
-**Il te faut Claude Code** (ou Codex, ou un agent équivalent) et être à l'aise
-d'ouvrir un terminal. Si tu n'as pas ça, ce dépôt ne te servira à rien pour
-l'instant.
+| Outil | Obligatoire ? | Pourquoi |
+|---|---|---|
+| **Claude Code** | ✅ oui | c'est lui qui lit, classe et répond |
+| **Claude in Chrome** | ✅ oui | c'est lui qui va dans Omnivox à ta place |
+| **Un connecteur d'agenda** (Google Agenda) | recommandé | sans lui, tu entres les dates à la main |
+| **git** | ✅ oui | pour cloner le dépôt |
+
+> **Claude in Chrome dépend de ton forfait Anthropic.** Vérifie que tu peux
+> l'installer **avant** de commencer — c'est le seul prérequis qui peut vraiment
+> bloquer.
+>
+> Sans lui, ça marche quand même : tu télécharges tes plans de cours à la main et
+> tu les déposes dans `_inbox/`. Compte une dizaine de minutes, une fois par
+> session.
 
 Testé sur **Omnivox / Léa au Cégep Limoilou**. Les autres cégeps roulent sur la
 même plateforme, alors ça devrait marcher — mais ce n'est pas vérifié.
 👉 **Si tu es dans un autre cégep, ouvre une issue et dis-nous si ça marche.**
-C'est le coup de main le plus utile que tu peux donner.
 
 ---
 
-## Installation — trois commandes
+## Installation
+
+**Windows** (PowerShell) :
+
+```powershell
+git clone https://github.com/<toi>/cartable.git
+Copy-Item -Recurse cartable\dossier-type "$env:USERPROFILE\Documents\Cartable"
+cd "$env:USERPROFILE\Documents\Cartable"
+claude
+```
+
+**macOS / Linux** :
 
 ```bash
 git clone https://github.com/<toi>/cartable.git
 cp -r cartable/dossier-type ~/Documents/Cartable
-cd ~/Documents/Cartable && claude
+cd ~/Documents/Cartable
+claude
 ```
 
 Puis, dans Claude :
@@ -38,91 +72,74 @@ Puis, dans Claude :
 /demarrage
 ```
 
-**C'est tout.** Le skill te pose **trois questions** — ton cégep, ton programme, ta
-session — puis il fait le reste.
+---
 
-### Ce qu'il fait, et ce qu'il te demande
+## Ce que `/demarrage` fait
 
-| Il fait | Il te demande |
-|---|---|
-| lit ta liste de cours, ton horaire, tes locaux, tes profs | **d'ouvrir Omnivox et de te connecter toi-même** |
-| télécharge et résume tes plans de cours | de confirmer avant qu'il touche à ton navigateur |
-| trouve la **politique d'IA de chaque cours** | rien d'autre |
-| remplit `_ETAT.md` | |
+Il te pose **trois questions** — ton cégep, ton programme, ta session — puis il te
+demande d'**ouvrir Omnivox et de te connecter toi-même**.
 
-**Il n'entre jamais ton mot de passe.** Tu te connectes, il lit. C'est la règle, et
-elle ne bougera pas.
+Ensuite il fait le grand balayage, une seule fois :
 
-Le principe du skill : **ne jamais demander ce qu'il peut lire.** Ton horaire est
-déjà dans Omnivox — te le faire retaper serait exactement le travail qu'on te
-promet d'éviter.
+- il parcourt **chaque cours** : documents, travaux, notes, communiqués, MIO
+- il **télécharge et résume tes plans de cours**, sans les convertir
+- il trouve la **politique d'IA de chaque cours**
+- il remplit **`_ETAT.md`** : tes cours, ton horaire, tes locaux, tes profs, tes
+  pondérations, et ce qui reste à confirmer
+- il remplit **ton agenda** : cours récurrents, examens, remises, sorties
 
-> ⏱️ L'import initial prend quelques minutes et consomme des jetons. C'est une
-> fois par session, pas tous les jours.
+**Il n'entre jamais ton mot de passe.** Tu te connectes, il lit. Cette règle ne
+bougera pas.
 
-**Pas de Claude in Chrome ?** Le skill bascule tout seul : il te demande de
-déposer tes plans de cours dans `_inbox/` à la main, et continue pareil.
+**Il ne va nulle part ailleurs que dans Omnivox** pendant le balayage.
+
+> ⏱️ Le balayage prend plusieurs minutes et consomme beaucoup de jetons. C'est
+> **une fois par session**, pas tous les jours.
+
+Le principe : **il ne demande jamais ce qu'il peut lire.** Ton horaire est déjà
+dans Omnivox — te le faire retaper serait exactement le travail qu'on te promet
+d'éviter.
 
 ---
 
-## Au quotidien
+## Ensuite, `/maj`
+
+Quand il y a du neuf — un MIO, un document déposé, une note publiée :
 
 ```
-/inbox
+/maj
 ```
 
-ou simplement « traite mon inbox ». Il classe, résume, met `_ETAT.md` à jour, et
-te dit ce qu'il a écarté.
+Il regarde **seulement ce qui a changé** depuis la dernière fois, met `_ETAT.md`
+et ton agenda à jour, et te dit ce qu'il a trouvé.
 
-Ensuite tu poses tes questions normalement :
-
-- « Comment je fais le devoir d'aujourd'hui ? »
-- « Où est mon local pour la sortie de demain ? »
-- « C'est quoi qui s'en vient cette semaine ? »
+Et surtout : **il croise.** Un MIO qui déplace un cours contre ton horaire, une
+nouvelle date contre tes autres examens. C'est là qu'il te sort les conflits que
+tu n'aurais pas vus tout seul.
 
 ---
 
-## L'extension Chrome — optionnelle
+## Où vit quoi — la règle la plus importante du projet
 
-Si tu as Claude in Chrome, **tu n'en as pas besoin pour Omnivox.** L'agent navigue
-tout seul.
-
-Elle reste utile pour deux choses :
-
-- **La capture rapide** — un clic droit, zéro token, zéro attente. Faire démarrer
-  un agent pour sauver un message, c'est lent.
-- **Messenger, Facebook, n'importe quel site** — l'extension marche partout et ne
-  coûte rien. Si tu préfères faire lire ton fil par ton agent, c'est ton compte et
-  ton choix.
-  🔒 **Une seule règle qui ne bouge pas : les noms des autres ne se gardent pas.**
-  Lire un groupe de 28 personnes, c'est voir les messages de 27 personnes qui ne
-  t'ont rien demandé.
-
-Installation : voir [`docs/INSTALLATION.md`](docs/INSTALLATION.md). Il faut créer
-un lien entre `Téléchargements/Cartable` et ton `_inbox/`, parce que Chrome refuse
-d'écrire ailleurs que dans Téléchargements.
-
----
-
-## Les conventions
-
-Elles sont dans [`dossier-type/CLAUDE.md`](dossier-type/CLAUDE.md), et c'est la
-partie qui compte le plus.
-
-| Règle | Pourquoi |
+| Ce qui est gardé | Où |
 |---|---|
-| Tout arrive dans `_inbox/`, jamais ailleurs | ce qui est neuf doit se voir d'un coup d'œil |
-| Un PDF reste un PDF, avec un `-resume.md` à côté | convertir détruit les tableaux; le résumé coûte une seule lecture |
-| ✅ vérifié / ❓ supposé, toujours distingués | une supposition présentée comme un fait finit par coûter cher |
-| Les dates vivent dans **ton agenda**, pas dans un fichier | une information à deux endroits va diverger |
-| Les noms des autres ne sont pas recopiés | ce sont tes camarades, pas tes données |
-| **La politique d'IA du prof est respectée, cours par cours** | voir ci-dessous |
+| **Une date, une heure, un local** | **ton agenda**, avec les rappels sur ton téléphone |
+| **Ce qui est vérifié / supposé, les règles, les pondérations** | **`_ETAT.md`** |
+| **Le contenu détaillé** | le document d'origine et son résumé |
 
-### La règle des profs
+L'agenda reçoit une copie **générée**. Cartable n'y relit jamais ce que tu modifies
+comme si c'était la vérité.
 
-Si le plan de cours dit que l'IA n'est pas permise, **l'agent refuse d'aider pour
-ce cours-là.** Il lit la politique dans le plan de cours et l'applique. Si elle est
-absente ou ambiguë, il prend la position la plus restrictive **et te le dit**.
+**Une information à deux endroits est une information qui va diverger.**
+
+---
+
+## La règle des profs
+
+Si le plan de cours dit que l'IA n'est pas permise, **Cartable refuse de t'aider
+pour ce cours-là.** Il lit la politique dans le plan de cours et l'applique, cours
+par cours. Si elle est absente ou ambiguë, il prend la position la plus restrictive
+**et te le dit**.
 
 Ce n'est pas un verrou — n'importe qui peut ouvrir ChatGPT dans un autre onglet.
 C'est une règle de confiance : tu sais toujours où tu te situes par rapport au
@@ -130,22 +147,57 @@ règlement de ton cours.
 
 ---
 
-## Ce que ça ne fait pas, et ne fera jamais
+## L'extension Chrome — optionnelle
+
+Tu n'en as **pas besoin** pour Omnivox : `/demarrage` et `/maj` s'en occupent.
+
+Elle sert à la **capture rapide** — un clic droit sur n'importe quoi, n'importe où,
+zéro token, zéro attente. Faire démarrer un agent juste pour sauver un message,
+c'est lent.
+
+🔒 **Une règle qui ne bouge pas, peu importe la source : les noms des autres ne se
+gardent pas.** Lire un groupe de 28 personnes, c'est voir les messages de 27
+personnes qui ne t'ont rien demandé.
+
+Installation : [`docs/INSTALLATION.md`](docs/INSTALLATION.md). Il faut créer un
+lien entre `Téléchargements/Cartable` et ton `_inbox/`, parce que Chrome refuse
+d'écrire ailleurs que dans Téléchargements.
+
+**Suggestion : essaie sans l'extension d'abord.** `/demarrage` et `/maj` suffisent
+pour voir si l'affaire te sert.
+
+---
+
+## Les conventions
+
+Tout est dans [`dossier-type/CLAUDE.md`](dossier-type/CLAUDE.md).
+
+| Règle | Pourquoi |
+|---|---|
+| Tout arrive dans `_inbox/`, jamais ailleurs | ce qui est neuf doit se voir d'un coup d'œil |
+| Un PDF reste un PDF, avec un `-resume.md` à côté | convertir détruit les tableaux; le résumé coûte une seule lecture |
+| ✅ vérifié / ❓ supposé, toujours distingués | une supposition présentée comme un fait finit par coûter cher |
+| Les dates vivent dans ton agenda, pas dans un fichier | deux copies vont diverger |
+| Les noms des autres ne sont pas recopiés | ce sont tes camarades, pas tes données |
+| La politique d'IA du prof est respectée, cours par cours | voir plus haut |
+
+---
+
+## Ce que ça ne fait pas
 
 - **Aucune connexion automatique à Omnivox.** Toi seul entres ton mot de passe.
-- **Rien n'est fait sans que tu le demandes.** Ton agent va où tu lui dis
-  d'aller, sur tes propres comptes.
+- **Rien n'est fait sans que tu le demandes.** Ton agent va où tu lui dis d'aller.
 - **Rien ne tourne en arrière-plan.** Pas de surveillance, pas de tâche planifiée.
-- **Aucune donnée ne quitte ton ordinateur** — sauf ce que ton propre agent
-  envoie, sous ton contrôle.
+- **Aucune donnée ne quitte ton ordinateur** — sauf ce que ton propre agent envoie,
+  sous ton contrôle.
 
 ---
 
 ## État du projet
 
-Jeune, et écrit par un étudiant de cégep pour son propre usage avant d'être
-publié. Les sélecteurs de Léa sont validés sur un vrai compte, mais Skytech peut
-changer son HTML sans prévenir.
+Jeune, et écrit par un étudiant de cégep pour son propre usage avant d'être publié.
+Les sélecteurs de Léa sont validés sur un vrai compte, mais Skytech peut changer
+son HTML sans prévenir.
 
 Les issues et les retours d'autres cégeps sont les bienvenus.
 
