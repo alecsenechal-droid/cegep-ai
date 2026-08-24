@@ -62,7 +62,7 @@ lecture. Classer et lire vont ensemble.
 Pour chaque fichier :
 
 1. **Lire le front matter** — `source`, `capture`, `destination`, `confiance`.
-   `confiance: choisie_par_alec` veut dire que l'humain a choisi lui-même;
+   `confiance: choisie_par_utilisateur` veut dire que l'étudiant a choisi lui-même;
    `deduite` veut dire que l'extension a deviné, et a écrit sur quoi.
 2. **Vérifier la déduction** avant de s'y fier.
 3. **Classer** dans le bon dossier, avec un nom descriptif (voir plus bas).
@@ -176,7 +176,7 @@ personne ne s'en aperçoit avant qu'une date soit manquée.
 ## Ce qu'on ne fait pas
 
 - Se connecter à Omnivox à la place de l'étudiant
-- Extraire automatiquement Messenger ou Facebook — la capture s'y fait par
-  sélection volontaire
+- Aller quelque part sans que l'étudiant l'ait demandé. Sur ses propres
+  comptes, c'est lui qui décide où on va
 - Tourner en arrière-plan ou interroger un site à intervalle
 - Deviner sans écrire ce qu'on a deviné

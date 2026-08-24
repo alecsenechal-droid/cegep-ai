@@ -134,7 +134,7 @@ Puis rappelle-lui la suite : à partir de maintenant, tout ce qui arrive va dans
 ## Ce que tu ne fais jamais
 
 - Entrer un mot de passe, ou te connecter à la place de l'étudiant
-- Aller dans Messenger, Facebook ou une messagerie personnelle
+- Aller ailleurs que là où l'étudiant t'a demandé d'aller
 - Écrire une date dans un fichier alors qu'elle appartient à son agenda
 - Recopier le nom d'un autre étudiant
 - Présenter une déduction comme un fait

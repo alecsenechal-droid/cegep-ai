@@ -91,10 +91,12 @@ Elle reste utile pour deux choses :
 
 - **La capture rapide** — un clic droit, zéro token, zéro attente. Faire démarrer
   un agent pour sauver un message, c'est lent.
-- **Messenger et Facebook** — et là elle est **obligatoire**. Faire naviguer un
-  agent dans Messenger, ce serait du scraping de Meta : contraire à leurs
-  conditions, et ça capturerait la vie privée de tes contacts. La capture s'y fait
-  par sélection, c'est-à-dire **par toi**.
+- **Messenger, Facebook, n'importe quel site** — l'extension marche partout et ne
+  coûte rien. Si tu préfères faire lire ton fil par ton agent, c'est ton compte et
+  ton choix.
+  🔒 **Une seule règle qui ne bouge pas : les noms des autres ne se gardent pas.**
+  Lire un groupe de 28 personnes, c'est voir les messages de 27 personnes qui ne
+  t'ont rien demandé.
 
 Installation : voir [`docs/INSTALLATION.md`](docs/INSTALLATION.md). Il faut créer
 un lien entre `Téléchargements/Cartable` et ton `_inbox/`, parce que Chrome refuse
@@ -131,7 +133,8 @@ règlement de ton cours.
 ## Ce que ça ne fait pas, et ne fera jamais
 
 - **Aucune connexion automatique à Omnivox.** Toi seul entres ton mot de passe.
-- **Aucun scraping de Facebook ou Messenger.**
+- **Rien n'est fait sans que tu le demandes.** Ton agent va où tu lui dis
+  d'aller, sur tes propres comptes.
 - **Rien ne tourne en arrière-plan.** Pas de surveillance, pas de tâche planifiée.
 - **Aucune donnée ne quitte ton ordinateur** — sauf ce que ton propre agent
   envoie, sous ton contrôle.
