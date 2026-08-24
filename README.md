@@ -140,17 +140,17 @@ même plateforme, ça devrait marcher — mais c'est pas vérifié.
 > ⚠️ **Le dépôt n'est pas encore publié.** Remplace `<toi>` par le vrai nom
 > d'utilisateur GitHub quand il le sera.
 
-### La facon la plus simple — une phrase, pas une commande
+### La façon la plus simple — une phrase, pas une commande
 
-Ouvre l'**application Claude Code** (n'importe ou), et colle ca :
+Ouvre l'**application Claude Code** (n'importe où), et colle ça :
 
 ```
 Installe Cartable pour moi : https://github.com/<toi>/cartable
-Suis les instructions dans INSTALL-AGENT.md du depot.
+Suis les instructions dans INSTALL-AGENT.md du dépôt.
 ```
 
-Il clone, il copie, il verifie, il nettoie, et il enchaine sur le demarrage.
-**Tu n'as rien d'autre a taper.** Il te posera une seule question au passage : ou
+Il clone, il copie, il vérifie, il nettoie, et il enchaîne sur le démarrage.
+**Tu n'as rien d'autre à taper.** Il te posera une seule question au passage : où
 tu veux ton dossier.
 
 ### Ou à la main, si tu préfères voir ce qui se passe
