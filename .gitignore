@@ -1,0 +1,8 @@
+# Le contenu scolaire reel ne doit JAMAIS se retrouver dans le depot.
+dossier-type/_inbox/*
+!dossier-type/_inbox/.gitkeep
+*.pdf
+*.docx
+*.xlsx
+*.pptx
+.env
