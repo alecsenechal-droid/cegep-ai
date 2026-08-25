@@ -1,58 +1,61 @@
-# Installer Cégep AI sur ton ordinateur
+# Installer Claude Desktop, Cégep AI et Claude in Chrome
 
 ## La version courte
 
-Tu peux commencer sans Git et sans terminal. Télécharge le ZIP, décompresse-le, copie `dossier-type` dans tes Documents et ouvre ce dossier dans ton agent. L’objectif n’est pas d’« installer un programme » : c’est de créer **ton dossier scolaire local**.
+Tu as besoin de **Claude Desktop**, de ton dossier `Documents\CegepAI` et de Chrome. Cégep AI va ensuite t’aider à activer Claude in Chrome, ouvrir ta propre session Omnivox et, si tu le veux, proposer les dates à ajouter à Google Calendar.
 
-## Ce que chaque outil fait
+## 1. Créer ton dossier Cégep AI
 
-| Outil | Est-ce requis au départ? | Pourquoi |
-|---|---|---|
-| Un agent avec accès à un dossier local | Oui | Il lit les documents que tu choisis et te montre ses changements. |
-| Claude Code dans l’application Desktop | Recommandé | C’est le plus naturel si tu connais Claude Chat : tu ouvres un dossier et tu continues à converser. |
-| Git | Non pour télécharger le template | Git garde l’historique du projet. Certaines applications peuvent le demander pour une session locale sur Windows. |
-| Claude in Chrome | Non | C’est une intégration avancée pour travailler dans un navigateur ouvert. Tu peux commencer avec un PDF local. |
-| Extension Cégep AI | Non | Elle sert seulement à capturer rapidement une sélection vers `_inbox`. |
-| Agenda Google / `.ics` | Non | À utiliser seulement quand ton agent et ton flux sont testés. |
-
-## Installer le dossier sans Git
-
-1. Sur la page GitHub de Cégep AI, clique **Code**, puis **Download ZIP**.
+1. Sur GitHub, clique **Code**, puis **Download ZIP**.
 2. Décompresse le ZIP dans Téléchargements.
-3. Ouvre le dossier décompressé et prends le dossier **`dossier-type`**.
-4. Renomme cette copie **`CegepAI`** — sans accent et sans espace, pour que les chemins restent simples.
-5. Glisse `CegepAI` dans **Documents**.
-6. Ouvre `Documents\CegepAI` dans ton agent.
-
-Tu dois voir ces quatre éléments :
+3. Copie le dossier `dossier-type`, renomme la copie `CegepAI` et place-la dans **Documents**.
+4. Vérifie que `Documents\CegepAI` contient :
 
 ```text
 CLAUDE.md    _ETAT.md    _inbox    .claude
 ```
 
-Le dossier `.claude` peut être caché. Dans l’Explorateur Windows : **Affichage → Afficher → Éléments masqués**. S’il manque, retourne dans le ZIP et copie seulement `.claude` dans `Documents\CegepAI`.
+Ce dossier est le tien. Tu peux ouvrir les fichiers, les modifier ou demander à Cégep AI de t’expliquer à quoi ils servent.
 
-## Si tu utilises Claude Desktop
+## 2. Ouvrir Claude Desktop
 
-1. Ouvre l’application Claude Desktop et connecte-toi avec ton compte habituel.
+1. Ouvre Claude Desktop et connecte-toi avec ton compte habituel.
 2. Va dans **Code**, choisis une session **Local**, puis sélectionne `Documents\CegepAI`.
-3. Commence en mode **Plan** si l’interface te le propose. Plan veut dire : Claude explique d’abord, sans modifier tes fichiers.
-4. Quand son plan est clair, utilise le mode où tu peux accepter ou refuser les changements avant d’écrire.
+3. Commence en mode **Plan** si l’interface te le propose. Il explique l’approche avant de modifier les fichiers.
 
-Si Claude Desktop te dit qu’il a besoin de **Git for Windows** pour ouvrir une session locale, installe Git for Windows et rouvre l’application. Git n’est pas nécessaire pour avoir téléchargé le ZIP; il peut être nécessaire à la manière dont l’application prépare son espace de travail local.
+Sous Windows, Claude Desktop peut demander **Git for Windows** lors de la première ouverture d’une session locale. Installe-le seulement si l’application te le demande, puis rouvre Claude Desktop. Git n’est pas nécessaire pour télécharger le ZIP; il peut être nécessaire au fonctionnement de la session locale.
 
-## Ne fais pas encore ces choses
+## 3. Activer Claude in Chrome
 
-Ne connecte pas Omnivox, ton agenda, Claude in Chrome ou l’extension de capture avant d’avoir réussi le PDF local décrit dans [`START_HERE.md`](START_HERE.md). Ce sont des outils utiles, mais ils ajoutent des permissions et des questions qui n’ont pas besoin d’être réglées le premier soir.
+Dans Claude Desktop :
 
-## Si tu préfères l’aide d’un agent
+1. Clique sur tes initiales en bas à gauche.
+2. Ouvre **Réglages**, puis **Connecteurs**.
+3. Trouve **Claude in Chrome** et clique **Configurer**.
+4. Active le connecteur. Installe et épingle l’extension Chrome si l’application te le propose.
 
-Dans une conversation où ton agent peut lire des liens GitHub, colle :
+Claude in Chrome dépend de Chrome, de l’extension, des permissions et d’un compte Anthropic direct compatible. Si tu ne vois pas le connecteur, ce n’est pas toi qui as raté une étape : commence avec un PDF dans `_inbox` et vérifie plus tard les conditions de ton compte.
+
+## 4. Ouvrir Omnivox et ton agenda
+
+Ouvre Omnivox dans Chrome et connecte-toi **toi-même**. Cégep AI peut accompagner la navigation de la session ouverte, mais il ne doit jamais demander ton mot de passe.
+
+Tu peux ensuite lui dire :
+
+```text
+Je suis connecté à Omnivox. Dis-moi ce que tu peux regarder, puis attends mon OK avant une action dans le navigateur.
+```
+
+Pour Google Calendar, demande une proposition et non une synchronisation silencieuse :
+
+```text
+Si tu trouves des cours ou des échéances, montre-moi la date et la source avant de proposer un ajout à mon Google Calendar.
+```
+
+## Si tu préfères qu’un agent installe le dossier
 
 ```text
 Installe Cégep AI pour moi : https://github.com/alecsenechal-droid/cegep-ai
-Suis INSTALL-AGENT.md. Avant d’écrire, explique-moi où mon dossier sera créé,
-ce qui sera copié et comment je pourrai revenir en arrière. Attends mon OK.
-```
 
-L’agent ne doit jamais te demander ton mot de passe Omnivox. Il ne doit écrire que dans le dossier de destination que tu as approuvé.
+Lis INSTALL-AGENT.md avant de commencer. Explique-moi chaque étape simplement et attends mon accord avant de modifier mes fichiers ou mon calendrier.
+```

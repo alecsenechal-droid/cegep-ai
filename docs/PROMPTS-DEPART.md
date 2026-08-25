@@ -1,59 +1,60 @@
-# Prompts de départ — tu peux challenger ton agent
+# Les phrases qui te gardent en contrôle
 
-Un agent n’est pas un prof qui a toujours raison. C’est un outil qui travaille dans ton dossier. Tu peux lui demander d’expliquer, de ralentir, de proposer autre chose ou de revenir en arrière. Ces prompts sont faits pour ça.
+Cégep AI est là pour t’aider à apprendre et t’organiser, pas pour décider à ta place. Tu peux lui poser toutes tes questions, changer son ton, corriger ses hypothèses et lui demander de recommencer.
 
-## Avant toute écriture
-
-```text
-Avant de modifier mes fichiers, montre-moi ton plan en 5 lignes. Dis-moi quels
-fichiers tu veux lire, créer, déplacer ou modifier. Attends mon OK.
-```
-
-## Pour comprendre ton dossier
+## Pour choisir sa façon de te répondre
 
 ```text
-Explique-moi ce dossier Cégep AI comme si je connais Claude Chat, mais pas les
-agents de code. Dis-moi à quoi servent CLAUDE.md, _ETAT.md, _inbox et .claude.
-Ne modifie rien.
+Explique-moi les choses simplement, comme si je connais Claude Chat mais pas les
+agents de code. Si tu utilises un mot technique, définis-le.
 ```
-
-## Pour traiter ton premier PDF
 
 ```text
-Lis le PDF dans _inbox. Garde l’original. Crée un résumé -resume.md à côté.
-Montre-moi quelles informations viennent du PDF, cite le fichier et écris
-« à confirmer » si une information manque ou est ambiguë.
+Je veux que tu sois direct avec moi. Si mon idée est mauvaise ou qu’une information
+manque, dis-le et propose une meilleure option.
 ```
 
-## Pour corriger un classement
+## Pour comprendre ou corriger son raisonnement
 
 ```text
-Je n’aime pas où ce document est classé. Explique-moi le classement actuel,
-propose deux options et les avantages de chacune. Attends mon OK avant de déplacer
-quoi que ce soit.
+Pourquoi as-tu choisi ce classement? Montre-moi la source, explique ton raisonnement
+et propose une autre option. Ne déplace rien avant mon OK.
 ```
-
-## Pour poser une question fiable
 
 ```text
-Réponds à cette question en citant le fichier utilisé. Si tu n’as pas la réponse
-dans mon dossier, dis-le clairement au lieu de deviner.
+Je ne suis pas d’accord avec cette réponse. Qu’est-ce que tu as supposé? Reprends
+avec seulement les informations vérifiées.
 ```
 
-## Pour changer une règle du système
+## Avant toute action sur tes fichiers, Omnivox ou Google Calendar
 
 ```text
-Je préfère classer mes documents par matière avant de les classer par type.
-Explique-moi ce qui changerait dans mon dossier, puis propose un plan réversible.
-N’applique rien sans mon OK.
+Avant d’agir, dis-moi ce que tu veux lire ou modifier, ce que ça change et comment
+je peux revenir en arrière. Attends mon OK.
 ```
 
-## Quand tu voudras essayer Omnivox
+## Pour Omnivox et Claude in Chrome
 
 ```text
-Avant d’ouvrir Omnivox ou mon navigateur, explique-moi ce que tu peux réellement
-faire avec les outils disponibles, ce que tu ne peux pas faire et quelles données
-tu vas voir. Ne me demande jamais mon mot de passe. Attends mon OK.
+Je suis connecté à Omnivox. Dis-moi ce que tu peux regarder avec Claude in Chrome,
+ce que tu ne peux pas faire et ce que tu vas me demander de confirmer.
 ```
 
-Omnivox, les connecteurs d’agenda et les intégrations navigateur dépendent des capacités de l’agent que tu utilises. Ils ne sont pas nécessaires pour que ton dossier local fonctionne.
+```text
+Commence par un seul cours ou une seule MIO. Montre-moi les sources avant de
+télécharger, classer ou résumer quelque chose.
+```
+
+## Pour Google Calendar
+
+```text
+Montre-moi les dates que tu proposes pour mon Google Calendar, leurs sources et le
+changement exact. N’ajoute, ne modifie et ne supprime rien sans mon OK.
+```
+
+## Si tu veux le chemin local
+
+```text
+Lis le PDF dans _inbox. Garde l’original. Crée un résumé -resume.md à côté seulement
+après m’avoir montré ton plan. Distingue ce qui vient du PDF de ce qui reste à confirmer.
+```

@@ -1,8 +1,10 @@
 # Installation
 
-## Extension avancée — à faire après ton premier PDF local
+## Extension avancée — à faire après le parcours guidé
 
-Cette extension est optionnelle. Utilise-la seulement après avoir réussi le parcours de [`START_HERE.md`](START_HERE.md) : un PDF dans `_inbox`, un résumé cité et un classement que tu comprends. Elle sert à capturer vite une sélection, une image ou un lien; elle n’est pas nécessaire pour commencer Cégep AI.
+Cette extension est optionnelle et **différente de Claude in Chrome**. Claude in Chrome sert à t’accompagner dans ton navigateur avec les permissions que tu choisis. Cette extension Cégep AI sert seulement à capturer vite une sélection, une image ou un lien dans `_inbox`.
+
+Utilise-la après avoir compris le parcours de [`START_HERE.md`](START_HERE.md) : Cégep AI, Claude in Chrome, ta session Omnivox ouverte par toi et, si tu le souhaites, ton calendrier. Elle n’est pas nécessaire pour commencer Cégep AI.
 
 ## Pourquoi il faut un lien
 

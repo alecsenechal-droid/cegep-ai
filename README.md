@@ -1,65 +1,57 @@
 # Cégep AI
 
-**Ton dossier scolaire, mais utilisable.**
+**Ta mémoire scolaire locale, avec un agent que tu peux questionner et personnaliser.**
 
-Cégep AI t’aide à garder tes documents de session dans un dossier local que tu peux comprendre, inspecter et personnaliser. Tu choisis ce que ton agent lit. Il peut résumer un plan de cours, te citer sa source, classer avec ton accord et t’aider à voir ce qui manque.
+Cégep AI t’aide à comprendre ta session à partir de tes propres documents, de ta session Omnivox ouverte et, si tu le choisis, de ton calendrier. Il ne te demande pas de lui faire confiance aveuglément : tu peux lui demander ses sources, changer sa façon de te parler, corriger son classement ou refuser une proposition.
 
-> **Le premier objectif n’est pas de brancher Omnivox.** Commence avec un PDF que tu choisis, vois comment l’agent travaille, puis décide si tu veux aller plus loin.
+> **Tu gardes la main.** Ton dossier reste dans `Documents\CegepAI`; tes mots de passe ne passent jamais par Cégep AI; aucune date n’est créée ou modifiée sans te la montrer.
 
 ## Commence ici
 
-Si tu connais Claude Chat, mais pas les agents de code, lis [`docs/START_HERE.md`](docs/START_HERE.md). Tu auras un premier résultat local en quelques minutes : un PDF dans `_inbox`, un résumé à côté et une réponse avec une source.
-
-| Tu veux… | Ouvre… |
-|---|---|
-| Installer le dossier sans Git ni terminal | [`docs/INSTALL-DESKTOP.md`](docs/INSTALL-DESKTOP.md) |
-| Comprendre avant de laisser l’agent écrire | [`docs/PROMPTS-DEPART.md`](docs/PROMPTS-DEPART.md) |
-| Réparer une erreur sans tout supprimer | [`docs/RECUPERER.md`](docs/RECUPERER.md) |
-| Capturer rapidement du texte depuis Chrome | [`docs/INSTALLATION.md`](docs/INSTALLATION.md) — optionnel |
-
-## Le modèle mental
-
-```text
-GitHub distribue le template
-        ↓
-Documents/CegepAI est ton dossier personnel local
-        ↓
-Ton agent lit seulement les fichiers que tu choisis
-        ↓
-Tu vois le plan, acceptes ou refuses les changements
-```
-
-GitHub n’est pas l’endroit où tes documents scolaires doivent vivre. Le dépôt contient le gabarit et les guides; ton travail, tes plans de cours et tes préférences restent dans `Documents\CegepAI`.
-
-## Ce qui est disponible, dépendant ou à tester
-
-| Capacité | Statut | Ce que ça veut dire |
-|---|---|---|
-| Dossier local, `_inbox`, règles de classement et sources | **Disponible maintenant** | Le template contient les fichiers et les consignes. |
-| Premier PDF local, résumé et réponse citée | **Dépend de ton agent** | Un agent avec accès au dossier peut suivre les règles du template. |
-| Claude Desktop / Claude Code | **Parcours recommandé** | Le plus naturel si tu connais déjà Claude Chat et veux travailler dans un dossier local. |
-| Codex, Cursor, Antigravity | **À tester** | Le template est lisible, mais chaque agent doit être testé avant une promesse de compatibilité. |
-| Claude in Chrome et Omnivox | **Avancé / dépend de ton agent** | Ça demande un navigateur, les bonnes permissions et parfois un forfait compatible. Tu te connectes toujours toi-même. |
-| Extension de capture Chrome | **Optionnelle** | Elle envoie une sélection ou un lien vers `_inbox`; elle se charge manuellement en mode développeur. |
-| Agenda Google direct ou `.ics` | **À valider** | Ne le considère pas comme une fonction garantie du template seul. |
-
-## Installer
-
-La voie la plus simple est expliquée dans [`docs/INSTALL-DESKTOP.md`](docs/INSTALL-DESKTOP.md) : télécharge le ZIP, copie `dossier-type` vers `Documents\CegepAI`, puis ouvre ce dossier dans ton agent.
-
-Si ton agent peut lire le dépôt GitHub et faire l’installation pour toi, copie ce message :
+Le premier message à copier dans ton agent est volontairement simple :
 
 ```text
 Installe Cégep AI pour moi : https://github.com/alecsenechal-droid/cegep-ai
-Suis INSTALL-AGENT.md. Avant d’écrire, explique-moi où mon dossier sera créé,
-ce qui sera copié et comment je pourrai revenir en arrière. Attends mon OK.
+
+Lis INSTALL-AGENT.md avant de commencer. Explique-moi chaque étape simplement et attends mon accord avant de modifier mes fichiers ou mon calendrier.
 ```
 
-L’agent ne doit jamais te demander ton mot de passe Omnivox. Il doit écrire seulement dans le dossier que tu as approuvé.
+Cégep AI doit ensuite se présenter, expliquer ce qu’il peut faire et te proposer le parcours suivant : **Claude in Chrome → ta session Omnivox ouverte par toi → calendrier facultatif**. Tu n’as pas besoin de connaître les commandes, Git ou `_inbox` avant de lui parler.
 
-## Les quatre éléments essentiels
+| Tu veux… | Ouvre… |
+|---|---|
+| Être guidé dans le premier parcours | [`docs/START_HERE.md`](docs/START_HERE.md) |
+| Installer Claude Desktop, ton dossier et Claude in Chrome | [`docs/INSTALL-DESKTOP.md`](docs/INSTALL-DESKTOP.md) |
+| Lui poser de meilleures questions ou le corriger | [`docs/PROMPTS-DEPART.md`](docs/PROMPTS-DEPART.md) |
+| Revenir en arrière sans paniquer | [`docs/RECUPERER.md`](docs/RECUPERER.md) |
+| Lire le déroulé détaillé du premier contact | [`docs/PREMIER-DEMARRAGE.md`](docs/PREMIER-DEMARRAGE.md) |
 
-Après l’installation, `Documents\CegepAI` doit contenir :
+## Ce qui se passe au départ
+
+1. **Cégep AI se présente.** Tu peux lui poser toutes tes questions scolaires; il doit expliquer ce qu’il voit et ce qu’il propose.
+2. **Tu choisis comment commencer.** Le parcours guidé vérifie Claude in Chrome. Si tu préfères, tu peux aussi commencer par un PDF local dans `_inbox`.
+3. **Tu ouvres Omnivox toi-même.** Cégep AI peut ensuite accompagner la navigation visible dans Chrome, si ton compte, ton forfait et tes permissions le permettent.
+4. **Tu choisis pour le calendrier.** Il te montre les dates et leurs sources; tu acceptes, refuses ou corriges avant toute écriture dans Google Calendar.
+
+GitHub sert à distribuer le modèle. Tes documents, tes résumés et tes préférences vivent localement dans `Documents\CegepAI`, pas dans ce dépôt.
+
+## Ce que tu peux faire avec Cégep AI
+
+Tu peux lui dire : « parle-moi plus simplement », « explique pourquoi tu as classé ça ici », « propose deux options », « oublie cette règle », « ne touche pas à mon agenda » ou « montre-moi la source ». Ces questions ne sont pas des erreurs : c’est exactement comme tu construis un système qui te ressemble.
+
+| Capacité | Statut | Ce que ça veut dire |
+|---|---|---|
+| Dossier local, `_inbox`, sources et règles | **Disponible maintenant** | Le template contient les fichiers lisibles et modifiables. |
+| Claude Desktop + dossier local | **Recommandé** | Une conversation proche de Claude Chat, avec ton dossier de session. |
+| Claude in Chrome | **Parcours guidé** | Disponible avec Chrome, l’extension, les permissions et un forfait Anthropic direct compatible. |
+| Omnivox dans Chrome | **Selon ton compte et tes permissions** | Tu te connectes toi-même; l’agent ne demande jamais ton mot de passe. |
+| Google Calendar | **Optionnel, avec accord** | L’agent peut proposer des dates trouvées, mais doit les montrer et attendre ton accord. |
+| PDF local dans `_inbox` | **Solution de secours simple** | Utile si tu préfères commencer sans navigateur ou si Chrome n’est pas disponible. |
+| Codex, Cursor, Antigravity | **À tester** | Le dossier est lisible, mais chaque agent doit être vérifié avant une promesse complète. |
+
+## Les quatre éléments de ton dossier
+
+Après l’installation, `Documents\CegepAI` contient :
 
 ```text
 CLAUDE.md    _ETAT.md    _inbox    .claude
@@ -67,35 +59,21 @@ CLAUDE.md    _ETAT.md    _inbox    .claude
 
 | Élément | À quoi il sert |
 |---|---|
-| `CLAUDE.md` | Les règles permanentes de ton système. |
-| `_ETAT.md` | Ta vue d’ensemble : ce qui est vérifié, ce qui reste à confirmer. |
-| `_inbox` | L’endroit où arrivent les documents nouveaux à traiter. |
-| `.claude` | Les compétences `/demarrage`, `/maj` et `/inbox` pour les agents qui les prennent en charge. |
+| `CLAUDE.md` | Les règles du système et tes droits de contrôle. |
+| `_ETAT.md` | Ce qui est vérifié, ce qui reste à confirmer et les règles de cours. |
+| `_inbox` | Les nouveaux fichiers avant leur classement. |
+| `.claude` | Les consignes et compétences prises en charge par certains agents. |
 
-Le dossier `.claude` peut être caché. Sous Windows : **Affichage → Afficher → Éléments masqués**.
+## Règles simples de confiance
 
-## Comment garder le contrôle
-
-Commence toujours par :
-
-> « Avant de modifier mes fichiers, montre-moi ton plan en 5 lignes et attends mon OK. »
-
-Tu peux demander à l’agent de citer ses sources, de proposer deux classements, d’expliquer un changement ou de revenir en arrière. Le guide [`docs/PROMPTS-DEPART.md`](docs/PROMPTS-DEPART.md) te donne des messages prêts à utiliser.
-
-Les originaux restent les originaux. Un PDF reste un PDF; un résumé est ajouté à côté. Quand l’information est incertaine, le système doit dire **« à confirmer »** au lieu de deviner.
-
-## Omnivox, navigateur et agenda : seulement après le premier essai
-
-Quand ton PDF local fonctionne, tu peux explorer les étapes avancées. Selon l’agent que tu utilises, il peut être possible de travailler dans un navigateur déjà ouvert ou d’ajouter des dates à un agenda. Ces fonctions ne sont pas garanties par les fichiers de ce dépôt seuls : elles dépendent de l’agent, de ses permissions et des connecteurs disponibles.
-
-Tu ne donnes jamais ton mot de passe Omnivox à Cégep AI. Tu te connectes toi-même dans ton navigateur. Si un outil demande ton mot de passe, arrête-toi et vérifie.
-
-## Extension Chrome — optionnelle
-
-L’extension sert à capturer rapidement un texte, une image ou un lien dans `_inbox`. Elle ne remplace pas le premier essai local. Lis [`docs/INSTALLATION.md`](docs/INSTALLATION.md) seulement quand le dossier te sert déjà et que tu comprends le lien entre `Téléchargements\CegepAI` et `_inbox`.
+- Tu te connectes toi-même à Omnivox et à Google.
+- Cégep AI ne demande jamais ton mot de passe, même si tu l’offres.
+- Il explique avant une action qui touche un compte, un navigateur, un calendrier ou tes fichiers.
+- Il garde les PDF originaux et indique ce qui est **à confirmer**.
+- Tu peux toujours dire non, demander une autre approche ou revenir en arrière.
 
 ## État du projet
 
-Cégep AI est un prototype ouvert, créé pour tester un système scolaire local avec des étudiants. Les retours de testeurs sont bienvenus, surtout si tu es dans un autre cégep ou utilises un autre agent. Ouvre une Issue pour décrire ce qui a marché, ce qui a bloqué et le premier mot que tu n’as pas compris.
+Cégep AI est un prototype ouvert, créé avec des étudiants. Si tu testes le projet, ouvre une Issue et raconte le premier endroit où tu as hésité : c’est plus utile qu’un « ça marche ».
 
 MIT.

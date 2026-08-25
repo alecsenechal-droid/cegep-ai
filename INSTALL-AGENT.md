@@ -1,95 +1,59 @@
-# Installation — instructions pour l'agent
+# Installer Cégep AI pour un étudiant
 
-Tu lis ceci parce qu'un étudiant t'a demandé d'installer Cégep AI. Fais les étapes
-dans l'ordre. **Il ne devrait avoir rien à taper d'autre.**
+Tu lis ce fichier parce qu’un étudiant t’a demandé d’installer Cégep AI. Fais les étapes dans l’ordre, explique-les dans un français simple et **attends toujours son accord avant une écriture, une installation ou une connexion externe**.
 
----
+## 1. Créer le dossier local
 
-## 1. Récupérer le dépôt
+Récupère le dépôt par `git clone` ou par ZIP. Si Git n’est pas installé, utilise le ZIP; ne bloque pas l’installation pour ça. Travaille d’abord dans un dossier temporaire, jamais directement dans les Documents de l’étudiant.
 
-```bash
-git clone https://github.com/alecsenechal-droid/cegep-ai.git
-```
+Demande une seule chose : où créer le dossier personnel. Propose `Documents\CegepAI` par défaut. Avant de copier, dis clairement :
 
-Si `git` n'est pas installé, télécharge le ZIP et décompresse-le. **Ne demande pas
-à l'étudiant d'installer git** — trouve un chemin qui marche avec ce qu'il a.
+> « Je vais copier le contenu du template dans `Documents\CegepAI`. Ce dossier restera sur ton ordinateur. Je ne toucherai pas à tes anciens dossiers scolaires et tu pourras le supprimer ou modifier ses fichiers quand tu veux. Est-ce que je continue? »
 
-Mets ça dans un dossier temporaire, pas dans ses Documents.
+Après son oui, copie le **contenu** de `dossier-type/` — y compris `.claude/` — dans la destination. Ne copie pas le dépôt Git lui-même et ne remplace jamais un `_ETAT.md` déjà rempli sans un accord explicite.
 
----
+Vérifie la présence de :
 
-## 2. Créer son dossier scolaire
-
-Demande-lui **où il le veut**, en proposant `Documents/CegepAI` par défaut. Une
-seule question, réponse par défaut acceptable.
-
-Puis copie le **contenu** de `dossier-type/` dedans — **pas le dossier lui-même**.
-
-**Windows**
-```powershell
-New-Item -ItemType Directory -Force "<destination>" | Out-Null
-Copy-Item -Path "<temp>\cegep-ai\dossier-type\*" -Destination "<destination>" -Recurse -Force
-```
-
-**macOS / Linux**
-```bash
-mkdir -p "<destination>"
-cp -R "<temp>/cegep-ai/dossier-type/." "<destination>/"
-```
-
-⚠️ Le `\*` et le `/.` sont importants : ils copient le contenu **y compris
-`.claude/`**. Sans ce dossier, les commandes `/demarrage` et `/maj` n'existeront
-pas, et l'échec sera **silencieux**.
-
----
-
-## 3. Vérifier — ne saute pas cette étape
-
-Le dossier de destination doit contenir exactement ces quatre choses :
-
-```
+```text
 CLAUDE.md    _ETAT.md    _inbox/    .claude/
 ```
 
-Si `.claude/` manque, recommence la copie. Ne continue pas.
+## 2. Présenter Cégep AI avant toute action
 
----
+Si le dossier est neuf, commence par ce message ou un équivalent aussi clair :
 
-## 4. Nettoyer
+> « Salut, je suis Cégep AI. Je vais t’aider avec ta session, tes cours, tes documents et tes échéances. Tu peux me poser tes questions comme à un coéquipier : je vais expliquer ce que je trouve et te montrer mes sources. Tu peux aussi me corriger, changer ma façon de te parler, refuser un classement ou me demander de recommencer. »
 
-Efface la copie temporaire du dépôt. L'étudiant n'a pas besoin de la garder.
+Ne présume jamais que ta première réponse, ton premier classement ou ton premier ton est le bon. Encourage l’étudiant à demander « pourquoi? », « montre-moi la source » et « fais-moi deux options ».
 
-Garde-la seulement s'il veut aussi installer l'extension Chrome — dans ce cas,
-dis-lui où elle est et renvoie-le à `docs/INSTALLATION.md`.
+## 3. Parcours guidé principal : Claude in Chrome
 
----
+Propose le parcours navigateur de manière simple :
 
-## 5. Premier succès local avant tout le reste
+> « Si tu veux, on branche maintenant Claude in Chrome. Ça me permet de t’accompagner dans Chrome pendant que tu regardes ton Omnivox, plutôt que de te laisser avec des étapes compliquées. Tu restes connecté dans tes propres comptes et tu gardes le dernier mot. On commence? »
 
-Ne commence pas automatiquement par Omnivox, un navigateur, une extension ou un
-agenda. L'étudiant doit d'abord comprendre son dossier et voir un résultat simple
-avec un document qu'il choisit.
+Si l’étudiant accepte, guide-le **sans installer ou activer quoi que ce soit à sa place** : dans Claude Desktop, il ouvre ses initiales en bas à gauche, puis **Réglages → Connecteurs → Claude in Chrome → Configurer**. Il active le connecteur et installe l’extension si Claude le propose. Cette fonction dépend d’un navigateur Chrome, de l’extension, des permissions et d’un compte Anthropic direct compatible.
 
-Explique-lui exactement ceci :
+Ne prétends jamais que Claude in Chrome est disponible si tu ne le vois pas. Si le connecteur ou le forfait ne le permet pas, explique-le simplement et propose le chemin PDF local dans `_inbox`.
 
-> C'est installé dans `<destination>`.
-> Commence avec un PDF de cours que tu choisis : mets-le dans `_inbox`, ouvre ce
-> dossier dans ton agent et demande un plan avant toute écriture.
-> Le guide `docs/START_HERE.md` du dépôt te donne les deux messages à coller.
+## 4. Omnivox et Google Calendar : l’étudiant ouvre, l’agent accompagne
 
-Si tu peux déjà travailler dans son nouveau dossier, lis `CLAUDE.md`, puis propose
-ce premier essai local. **Attends son accord clair** avant de lire ou créer un
-fichier. N'applique pas `/demarrage` par défaut : cette compétence peut dépendre
-d'un navigateur et de capacités que l'agent n'a pas forcément.
+Après Claude in Chrome, demande à l’étudiant d’ouvrir **lui-même** Omnivox dans Chrome et de se connecter lui-même. Ne demande jamais son mot de passe, son code d’accès ou un code à usage unique. Quand sa session est ouverte, explique ce que tu veux lire et attends son accord avant les actions dans le navigateur.
 
----
+Propose Google Calendar seulement après :
 
-## Ce que tu ne fais pas pendant l'installation
+> « Veux-tu aussi connecter ton Google Calendar? Je pourrai te proposer les cours et échéances trouvés. Avant d’ajouter, modifier ou supprimer une date, je te montrerai la date, la source et le changement proposé. »
 
-- **Demander son mot de passe Omnivox.** Jamais, même offert. Il se connecte
-  lui-même dans son navigateur; tu liras la session ouverte.
-- Écrire quoi que ce soit ailleurs que dans le dossier de destination.
-- Modifier un dossier scolaire qui existe déjà. Si la destination contient déjà un
-  `_ETAT.md` rempli, **arrête et demande** avant de rien écraser.
-- Partir un navigateur, connecter un agenda ou installer une extension avant que
-  l'étudiant ait réussi son premier document local.
+Ne crée pas de calendrier, ne déplace pas une date et ne déduis pas une échéance ambiguë sans accord explicite.
+
+## 5. Solution de secours : premier PDF local
+
+Si l’étudiant ne veut pas utiliser le navigateur, si Claude in Chrome n’est pas disponible ou s’il veut comprendre le dossier avant, propose un PDF local : il dépose un plan de cours dans `_inbox`; tu expliques ton plan; tu gardes l’original; tu crées un résumé à côté seulement après son OK. Renvoie vers `docs/START_HERE.md`.
+
+## Ce que tu ne fais jamais
+
+- Demander, accepter ou saisir un mot de passe Omnivox ou Google.
+- Ouvrir Omnivox, Google Calendar ou un autre site sans une demande claire de l’étudiant.
+- Faire croire qu’un connecteur, une synchronisation ou un agenda est garanti par le template seul.
+- Écrire hors du dossier approuvé, écraser un dossier existant ou créer des dates silencieusement.
+- Diminuer les questions de l’étudiant : elles servent à personnaliser son système.
